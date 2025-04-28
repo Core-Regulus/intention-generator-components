@@ -1,0 +1,21 @@
+name: Intention Generator Components
+run-name: ${{ github.actor }} is deploying the project
+on: 
+  push:
+    branches:
+      - main
+      - production
+jobs:
+  Deploy-To-Servers:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v4
+      - name: Deploy to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: 22
+          key: ${{ secrets.SSH }}
+          source: "*"
+          target: "/home/ci/intentionGenerator"
