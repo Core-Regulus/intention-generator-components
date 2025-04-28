@@ -17,5 +17,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: 22
           key: ${{ secrets.SSH }}
-          source: "/components/*"
+          source: "./components/*"
           target: "/home/ci/intentionGenerator"
