@@ -1,0 +1,55 @@
+import * as THREE from 'three';
+import '/components/floatValue/floatValue.js'
+
+class Euler extends HTMLElement {
+  #template = `
+    <edit-float-value class="roll" data-title="Roll:" value="0"></edit-float-value>
+    <edit-float-value class="pitch" data-title="Pitch:" value="0"></edit-float-value>
+    <edit-float-value class="yaw" data-title="Yaw:" value="0"></edit-float-value>    
+  `;
+
+  #readOnly = false;
+  
+  constructor() {
+    super();
+  } 
+
+
+  get readOnly() { return this.#readOnly; }
+
+  get roll() { return this.components.roll.value; }
+  set roll(value) { this.components.roll.value = value }
+  get pitch() { return this.components.pitch.value; }
+  set pitch(value) { this.components.pitch.value = value; }
+  get yaw() { return this.components.yaw.value; }
+  set yaw(value) { this.components.yaw.value = value; }
+
+  set readOnly(value) {
+    this.#readOnly = value;
+    this.components.roll.readOnly = value;
+    this.components.pitch.readOnly = value;
+    this.components.yaw.readOnly = value;
+  }
+
+  get quaternion() {
+    const quaternion = new THREE.Quaternion();
+    const euler = new THREE.Euler( this.roll, this.pitch, this.yaw, 'XYZ' );    
+    return quaternion.setFromEuler(euler);
+  }
+
+  async connectedCallback() {    
+    this.innerHTML = this.#template;
+    const readOnly = toBoolean(this.getAttribute('read-only'));
+
+
+    this.components = {
+      roll: this.querySelector('.roll'),
+      pitch: this.querySelector('.pitch'),
+      yaw: this.querySelector('.yaw'),
+    };    
+  }
+
+  async disconnectedCallback() { }
+}
+
+customElements.define('edit-euler', Euler);
