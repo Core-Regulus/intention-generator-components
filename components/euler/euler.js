@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import '/components/floatValue/floatValue.js'
+import './floatValue/floatValue.js'
 
 class Euler extends HTMLElement {
   #template = `
