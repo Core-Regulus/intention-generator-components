@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import '../floatValue/floatValue.js'
 import attributes from '../attributes/attributes.js'
+import loader from '../loader/loader.js';
 
 loader.loadCSS(import.meta.resolve('./euler.css'));
 

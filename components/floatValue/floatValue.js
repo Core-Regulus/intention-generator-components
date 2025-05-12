@@ -1,3 +1,5 @@
+import loader from '../loader/loader.js';
+
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
 class FloatValue extends HTMLElement {
