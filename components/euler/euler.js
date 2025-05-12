@@ -50,4 +50,4 @@ class Euler extends HTMLElement {
   }
 }
 
-customElements.define('edit-euler', Euler);
+customElements.define('intention-euler', Euler);
