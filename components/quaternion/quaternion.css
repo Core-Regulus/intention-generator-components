@@ -1,0 +1,8 @@
+intention-quaternion span {
+  width: 75px;
+}
+
+intention-quaternion input:read-only {
+  outline: none;
+  border: none;
+}

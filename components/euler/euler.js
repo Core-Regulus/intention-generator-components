@@ -2,6 +2,9 @@ import * as THREE from 'three';
 import '../floatValue/floatValue.js'
 import attributes from '../attributes/attributes.js'
 
+loader.loadCSS(import.meta.resolve('./euler.css'));
+
+
 class Euler extends HTMLElement {
   #template = `
     <edit-float-value class="roll" data-title="Roll:" value="0"></edit-float-value>

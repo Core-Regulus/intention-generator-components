@@ -1,3 +1,5 @@
+loader.loadCSS(import.meta.resolve('./quaternion.css'));
+
 class Quaternion extends HTMLElement {
   
   #template =

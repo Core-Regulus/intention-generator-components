@@ -1,5 +1,6 @@
-class FloatValue extends HTMLElement {
+loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
+class FloatValue extends HTMLElement {
   #template = `
     <label>
       <span></span>

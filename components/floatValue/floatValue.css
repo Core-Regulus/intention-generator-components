@@ -1,0 +1,8 @@
+intention-float-value span {
+  width: 75px;
+}
+
+intention-float-value input:read-only {
+  outline: none;
+  border: none;
+}
