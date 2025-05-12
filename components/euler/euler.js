@@ -14,7 +14,7 @@ class Euler extends HTMLElement {
   constructor() {
     super();
     this.innerHTML = this.#template;
-    const readOnly = attributes.getAttributeBoolean(this,'read-only');
+    const readOnly = attributes.getBoolean(this,'read-only');
     this.components = {
       roll: this.querySelector('.roll'),
       pitch: this.querySelector('.pitch'),
