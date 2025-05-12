@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import '../floatValue/floatValue.js'
-import '../attributes/attributes.js'
+import attributes from '../attributes/attributes.js'
 
 class Euler extends HTMLElement {
   #template = `
@@ -14,7 +14,7 @@ class Euler extends HTMLElement {
   constructor() {
     super();
     this.innerHTML = this.#template;
-    const readOnly = getAttributeBoolean(this,'read-only');
+    const readOnly = attributes.getAttributeBoolean(this,'read-only');
     this.components = {
       roll: this.querySelector('.roll'),
       pitch: this.querySelector('.pitch'),
