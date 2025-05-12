@@ -61,4 +61,4 @@ class Quaternion extends HTMLElement {
   async disconnectedCallback() { }
 }
 
-customElements.define('edit-quaternion', Quaternion);
+customElements.define('intention-quaternion', Quaternion);

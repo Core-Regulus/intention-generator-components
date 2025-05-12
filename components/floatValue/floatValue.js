@@ -36,4 +36,4 @@ class FloatValue extends HTMLElement {
   async disconnectedCallback() { }
 }
 
-customElements.define('edit-float-value', FloatValue);
+customElements.define('intention-float-value', FloatValue);

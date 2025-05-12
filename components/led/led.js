@@ -1,14 +1,12 @@
 import loader from '../loader/loader.js';
 import attributes from '../attributes/attributes.js';
 
-loader.load(import.meta.resolve('indicator.css'));
+loader.loadCSS(import.meta.resolve('./indicator.css'));
 
 class Indicator extends HTMLElement {
   #template = `
-    <label>
-      <span class="led"></span>
-      <span class="title"></span>
-    </label>
+    <span class="led"></span>
+    <span class="title"></span>
   `;
 
   #value = false;
@@ -25,10 +23,9 @@ class Indicator extends HTMLElement {
   
   set value(value) { 
     if (value == true) {
-      this.components.led.classList.add('on');
-      return;
+      this.classList.add('on');
     } else {
-      this.components.led.classList.remove('on'); 
+      this.classList.remove('on'); 
     }
   }
   get value() { return this.components.val.value; }

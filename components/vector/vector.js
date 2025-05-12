@@ -54,5 +54,5 @@ class Vector extends HTMLElement {
     async disconnectedCallback() { }
   }
   
-  customElements.define('edit-vector', Vector);
+  customElements.define('intention-vector', Vector);
   

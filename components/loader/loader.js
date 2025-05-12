@@ -24,7 +24,7 @@ function loadTemplate(url) {
   return html;
 }
 
-async function load(url) {
+async function loadHTML(url) {
   for (let i = 0; i < requestMaxTry; i++) {
     try {
       const lt = loadTemplate(url);
@@ -41,6 +41,18 @@ async function load(url) {
       throw e;
     }
   }
+}
+
+async function loadCSS(url) {
+  const lt = pathToTemplateId(url);
+  const dc = window.document.body.querySelector('#' + lt);
+  if (dc != null) return null;
+  const head = window.document.querySelector('head');
+  const link = window.document.createElement('link');
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute("href", url);
+  head.appendChild(link);
 }
 
 async function sleep(timeout) {
@@ -137,7 +149,8 @@ export default {
   getBearerToken,
   setBearerToken,
   removeBearerToken,
-  load,
+  loadHTML,
+  loadCSS,
   fetch: tryFetch,
   getHostName,
 };
