@@ -1,4 +1,4 @@
-function toBoolean() {
+function toBoolean(value) {
   if (value == null) return false;
   return value === 'true' || value === '1';  
 }
