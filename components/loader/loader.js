@@ -12,7 +12,7 @@ export function getHostName() {
 }
 
 function pathToTemplateId(rPath) {
-  const ts = rPath.replaceAll(/[\/\.]+/g, '-');
+  const ts = rPath.replaceAll(/[\/\.\:]+/g, '-');
   return ts;
 }
 
