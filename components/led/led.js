@@ -3,7 +3,7 @@ import attributes from '../attributes/attributes.js';
 
 loader.loadCSS(import.meta.resolve('./indicator.css'));
 
-class Indicator extends HTMLElement {
+class Led extends HTMLElement {
   #template = `
     <span class="led"></span>
     <span class="title"></span>
@@ -34,4 +34,4 @@ class Indicator extends HTMLElement {
   set title(value) { return this.components.title.innerHTML = value; }
 }
 
-customElements.define('intention-indicator', Indicator);
+customElements.define('intention-led', Led);
