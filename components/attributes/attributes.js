@@ -41,8 +41,8 @@ export function getString(htmlElement, attrName) {
 
 export function loadAttributes(htmlElement) {
   for (const attr of htmlElement.attributes) {
-    const skipAttr = skipAttr[attr.name];
-    if (skipAttr) continue;
+    const sa = skipAttr[attr.name];
+    if (sa) continue;
     const name = getName(attr.name);    
     if (name == null) continue;
     this[name] = getValue(attr.value);
