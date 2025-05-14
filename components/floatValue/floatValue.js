@@ -33,13 +33,7 @@ class FloatValue extends HTMLElement {
     this.components.val.readOnly = this.#readOnly;
   }
 
-  get readOnly() { return this.#readOnly; }  
-
-  set gap(value) {
-    this.styles.gap = value;    
-  }
-
-  get gap() { return this.tyles.gap; }
+  get readOnly() { return this.#readOnly; }
 }
 
 customElements.define('intention-float-value', FloatValue);
