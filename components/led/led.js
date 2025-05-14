@@ -1,7 +1,7 @@
 import loader from '../loader/loader.js';
 import attributes from '../attributes/attributes.js';
 
-loader.loadCSS(import.meta.resolve('./indicator.css'));
+loader.loadCSS(import.meta.resolve('./led.css'));
 
 class Led extends HTMLElement {
   #template = `
