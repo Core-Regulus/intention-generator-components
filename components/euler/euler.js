@@ -17,13 +17,13 @@ class Euler extends HTMLElement {
   
   constructor() {
     super();
-    this.innerHTML = this.#template;
-    const readOnly = attributes.getBoolean(this,'read-only');
+    this.innerHTML = this.#template;    
     this.components = {
       roll: this.querySelector('.roll'),
       pitch: this.querySelector('.pitch'),
       yaw: this.querySelector('.yaw'),
-    };    
+    };
+    attributes.loadAttributes(this);
   } 
 
 
