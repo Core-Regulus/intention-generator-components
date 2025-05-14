@@ -27,10 +27,6 @@ class Quaternion extends HTMLElement {
   
   constructor() {
     super();
-    attributes.loadAttributes(this);
-  }
-
-  async connectedCallback() {
     this.innerHTML = this.#template;
     this.components = {
       real: this.querySelector('.real'),
@@ -38,6 +34,7 @@ class Quaternion extends HTMLElement {
       j: this.querySelector('.j'),
       k: this.querySelector('.k'),
     };    
+    attributes.loadAttributes(this);
   }
 
   get readOnly() {
@@ -61,9 +58,7 @@ class Quaternion extends HTMLElement {
     this.components.j.readOnly = this.#readOnly;
     this.components.k.readOnly = this.#readOnly;
     return this.#readOnly;
-  }
-
-  async disconnectedCallback() { }
+  } 
 }
 
 customElements.define('intention-quaternion', Quaternion);

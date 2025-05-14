@@ -15,9 +15,6 @@ class FloatValue extends HTMLElement {
 
   constructor() {
     super();
-  }
-
-  async connectedCallback() {    
     const body = this.innerHTML;
     this.innerHTML = this.#template;
     this.components = {
@@ -27,7 +24,7 @@ class FloatValue extends HTMLElement {
     this.components.title.innerHTML = body;
     attributes.loadAttributes(this);
   }
-  
+
   set value(value) { this.components.val.value = value.toFixed(3); }
   get value() { return this.components.val.value; }
 
@@ -36,9 +33,7 @@ class FloatValue extends HTMLElement {
     this.components.val.readOnly = this.#readOnly;
   }
 
-  get readOnly() { return this.#readOnly; }
-  
-  async disconnectedCallback() { }
+  get readOnly() { return this.#readOnly; }  
 }
 
 customElements.define('intention-float-value', FloatValue);
