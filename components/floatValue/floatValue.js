@@ -1,4 +1,5 @@
 import loader from '../loader/loader.js';
+import attributes from '../attributes/attributes.js';
 
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
