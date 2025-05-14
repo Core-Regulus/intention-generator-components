@@ -19,7 +19,7 @@ class Led extends HTMLElement {
       title: this.querySelector('.title'),
       led: this.querySelector('.led')
     };
-    this.components.led.innerHTML = body;
+    this.components.title.innerHTML = body;
     attributes.loadAttributes(this);
   }  
   
