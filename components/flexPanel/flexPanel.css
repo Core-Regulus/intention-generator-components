@@ -3,6 +3,6 @@ intention-flex-panel {
   flex-direction: row;
 }
 
-intention-flex-panel .vertical {
+intention-flex-panel.vertical {
   flex-direction: column;
 }
