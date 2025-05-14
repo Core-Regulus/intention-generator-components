@@ -19,10 +19,10 @@ class FlexPanel extends HTMLElement {
   get direction() { return this.#direction; }
   
   set gap(value) {
-    this.styles.gap = value;    
+    this.style.gap = value;    
   }
 
-  get gap() { return this.tyles.gap; }
+  get gap() { return this.style.gap; }
 }
 
 customElements.define('intention-flex-panel', FlexPanel);
