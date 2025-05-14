@@ -8,9 +8,9 @@ loader.loadCSS(import.meta.resolve('./euler.css'));
 
 class Euler extends HTMLElement {
   #template = `
-    <intention-float-value class="roll" data-title="Roll:" value="0"></intention-float-value>
-    <intention-float-value class="pitch" data-title="Pitch:" value="0"></intention-float-value>
-    <intention-float-value class="yaw" data-title="Yaw:" value="0"></intention-float-value>    
+    <intention-float-value class="roll" value="0">Roll</intention-float-value>
+    <intention-float-value class="pitch" value="0">Pitch</intention-float-value>
+    <intention-float-value class="yaw" value="0">Yaw</intention-float-value>    
   `;
 
   #readOnly = false;
