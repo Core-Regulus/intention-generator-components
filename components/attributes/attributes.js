@@ -61,7 +61,7 @@ export function loadAttributes(htmlElement) {
     if (sa) continue;
     const name = getName(attr.name);    
     if (name == null) continue;
-    this[name] = getValue(attr.value);
+    htmlElement[name] = getValue(attr.value);
   }
 }
 
