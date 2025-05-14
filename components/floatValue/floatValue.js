@@ -17,13 +17,14 @@ class FloatValue extends HTMLElement {
   }
 
   async connectedCallback() {    
+    const body = this.innerHTML;
     this.innerHTML = this.#template;
     this.components = {
       title: this.querySelector('span'),
       val: this.querySelector('input')
     };
-    const title = this.getAttribute('data-title');
-    this.components.title.innerHTML = title;
+    this.components.title.innerHTML = body;
+    attributes.loadAttributes(this);
   }
   
   set value(value) { this.components.val.value = value.toFixed(3); }

@@ -1,8 +1,9 @@
 import loader from '../loader/loader.js';
+import attributes from '../attributes/attributes.js';
+
 loader.loadCSS(import.meta.resolve('./quaternion.css'));
 
-class Quaternion extends HTMLElement {
-  
+class Quaternion extends HTMLElement {  
   #template =
       `<label>
           <span>real:</span>
@@ -26,6 +27,7 @@ class Quaternion extends HTMLElement {
   
   constructor() {
     super();
+    attributes.loadAttributes(this);
   }
 
   async connectedCallback() {
