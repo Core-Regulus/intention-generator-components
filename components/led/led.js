@@ -13,11 +13,13 @@ class Led extends HTMLElement {
 
   constructor() {
     super();
+    const body = this.innerHTML;
     this.innerHTML = this.#template;
     this.components = {
       title: this.querySelector('.title'),
       led: this.querySelector('.led')
     };
+    this.components.led.innerHTML = body;
     attributes.loadAttributes(this);
   }  
   
