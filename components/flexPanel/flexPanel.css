@@ -1,0 +1,8 @@
+intention-flex-panel {
+  display: flex; 
+  flex-direction: row;
+}
+
+intention-flex-panel vertical {
+  flex-direction: column;
+}
