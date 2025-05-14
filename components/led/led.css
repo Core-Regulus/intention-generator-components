@@ -1,14 +1,14 @@
-intention-indicator .led {
+intention-led .led {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
 }
 
-intention-indicator .led {
+intention-led .led {
   background-color: gray;
 }
 
-intention-indicator.on .led {
+intention-led.on .led {
   background-color: green;
 }
 
