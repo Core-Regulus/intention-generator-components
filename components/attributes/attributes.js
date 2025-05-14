@@ -3,8 +3,12 @@ const typeMap = {
   'false': false
 }
 
-const skipAttr = {
+const skipAttrNames = {
   'class': true
+}
+
+const skipAttrNamePart = {
+  'data': true
 }
 
 function toBoolean(value) {
@@ -17,9 +21,21 @@ function toString(value) {
   return value.toString();  
 }
 
+function capitalize(val) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
 function getName(attrName) {
-  const na = attrName.split('-');
-  return na[1] || na[0];
+  const na = attrName.split('-').filter(f => f == skipAttrNamePart[f]);
+  const res = [];
+  for (let i = 0; i < na.length; i++) {
+    const item = na[i];
+    if (i == 0) 
+      res.push(item);
+    else
+      res.push(capitalize(item))
+  }
+  return res.join('');
 }
 
 function getValue(val) {
@@ -41,7 +57,7 @@ export function getString(htmlElement, attrName) {
 
 export function loadAttributes(htmlElement) {
   for (const attr of htmlElement.attributes) {
-    const sa = skipAttr[attr.name];
+    const sa = skipAttrNames[attr.name];
     if (sa) continue;
     const name = getName(attr.name);    
     if (name == null) continue;
