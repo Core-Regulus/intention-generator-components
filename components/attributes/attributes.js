@@ -3,6 +3,10 @@ const typeMap = {
   'false': false
 }
 
+const skipAttr = {
+  'class': true
+}
+
 function toBoolean(value) {
   if (value == null) return false;
   return value === 'true' || value === '1';  
@@ -37,7 +41,9 @@ export function getString(htmlElement, attrName) {
 
 export function loadAttributes(htmlElement) {
   for (const attr of htmlElement.attributes) {
-    const name = getName(attr.name);
+    const skipAttr = skipAttr[attr.name];
+    if (skipAttr) continue;
+    const name = getName(attr.name);    
     if (name == null) continue;
     this[name] = getValue(attr.value);
   }
