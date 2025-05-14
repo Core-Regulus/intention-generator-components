@@ -26,7 +26,7 @@ function capitalize(val) {
 }
 
 function getName(attrName) {
-  const na = attrName.split('-').filter(f => f == skipAttrNamePart[f]);
+  const na = attrName.split('-').filter(f => skipAttrNamePart[f] == false);
   const res = [];
   for (let i = 0; i < na.length; i++) {
     const item = na[i];
