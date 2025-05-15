@@ -9,9 +9,17 @@ export class FlexPanel extends Container {
     this.classList.add('intention-flex-panel');
   }
 
-  set direction(value) { this.style['flex-direction'] = value; }
-  get direction() { return this.style['flex-direction'] }
-  set gap(value) { this.style.gap = value; }
+  set direction(value) { 
+    this.style['flex-direction'] = value; 
+  }
+  get direction() { 
+    return this.style['flex-direction'] 
+  }
+
+  set gap(value) { 
+    this.style.gap = value; 
+  }
+
   get gap() { return this.style.gap; }
 }
 
