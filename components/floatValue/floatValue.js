@@ -4,11 +4,9 @@ import attributes from '../attributes/attributes.js';
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
 class FloatValue extends HTMLElement {
-  #template = `
-    <label>
-      <span></span>
-      <input type="number" value="0" step="0.01"/>
-    </label>
+  #template = `    
+    <span></span>
+    <input type="number" value="0" step="0.01"/>
   `;
 
   #readOnly = false;
