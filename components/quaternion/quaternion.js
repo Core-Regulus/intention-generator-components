@@ -6,7 +6,7 @@ loader.loadCSS(import.meta.resolve('./quaternion.css'));
 class Quaternion extends FlexPanel {  
   get template() {
     return `
-      <intention-float-value class="roll" value="0" step="0.01">Real</intention-float-value>
+      <intention-float-value class="real" value="0" step="0.01">Real</intention-float-value>
       <intention-float-value class="i" value="0" step="0.01">i</intention-float-value>
       <intention-float-value class="j" value="0" step="0.01">i</intention-float-value>
       <intention-float-value class="k" value="0" step="0.01">i</intention-float-value>        
