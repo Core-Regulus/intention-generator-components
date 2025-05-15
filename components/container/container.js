@@ -2,7 +2,8 @@ import attributes from '../attributes/attributes.js';
 
 export class Container extends HTMLElement {
   constructor() {    
-    super();
+    super();    
+    this.render();
     attributes.loadAttributes(this);
   }
 
