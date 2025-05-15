@@ -3,10 +3,11 @@ import attributes from '../attributes/attributes.js';
 
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
 
-class FlexPanel extends HTMLElement {
+export class FlexPanel extends HTMLElement {
   #direction = 'horizontal';
   constructor() {
     super();
+    this.classList.add('intention-flex-panel')
     attributes.loadAttributes(this);
   }
 
@@ -26,3 +27,7 @@ class FlexPanel extends HTMLElement {
 }
 
 customElements.define('intention-flex-panel', FlexPanel);
+
+export default {
+  FlexPanel
+}

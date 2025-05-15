@@ -1,9 +1,10 @@
 import loader from '../loader/loader.js';
 import attributes from '../attributes/attributes.js';
+import { FlexPanel } from '../flexPanel/flexPanel.js';
 
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
-class FloatValue extends HTMLElement {
+class FloatValue extends FlexPanel {
   #template = `    
     <span></span>
     <input type="number" value="0" step="0.01"/>
