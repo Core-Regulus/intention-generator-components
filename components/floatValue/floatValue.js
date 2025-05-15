@@ -11,7 +11,6 @@ class FloatValue extends FlexPanel {
   `;
 
   constructor() {
-    super();
     const body = this.innerHTML;
     this.innerHTML = this.#template;
     this.components = {
@@ -19,7 +18,7 @@ class FloatValue extends FlexPanel {
       val: this.querySelector('input')
     };
     this.components.title.innerHTML = body;
-    attributes.loadAttributes(this);
+    super();
   }
 
   set value(value) { this.components.val.value = value.toFixed(3); }
