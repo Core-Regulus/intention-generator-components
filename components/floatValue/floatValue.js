@@ -8,13 +8,13 @@ class FloatValue extends FlexPanel {
   async render() {
     const body = this.innerHTML;
     const template = `    
-      <span></span>
-      <input type="number" value="0" step="0.01"/>
+      <span class="title"></span>
+      <input class="value" type="number" value="0" step="0.01"/>
     `;
     this.innerHTML = template;
     this.components = {
-      title: this.querySelector('span'),
-      val: this.querySelector('input')
+      title: this.querySelector('.title'),
+      val: this.querySelector('.value')
     };
     this.components.title.innerHTML = body;
   }
