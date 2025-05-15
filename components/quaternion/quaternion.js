@@ -8,8 +8,8 @@ class Quaternion extends FlexPanel {
     return `
       <intention-float-value class="real" value="0" step="0.01">Real</intention-float-value>
       <intention-float-value class="i" value="0" step="0.01">i</intention-float-value>
-      <intention-float-value class="j" value="0" step="0.01">i</intention-float-value>
-      <intention-float-value class="k" value="0" step="0.01">i</intention-float-value>        
+      <intention-float-value class="j" value="0" step="0.01">j</intention-float-value>
+      <intention-float-value class="k" value="0" step="0.01">k</intention-float-value>        
     `;
   }
 
