@@ -5,22 +5,11 @@ loader.loadCSS(import.meta.resolve('./quaternion.css'));
 
 class Quaternion extends HTMLElement {  
   #template =
-      `<label>
-          <span>real:</span>
-          <input class="real" type="number" value="0" step="0.01" name="real"/>
-        </label>
-        <label>
-            <span>i:</span>
-            <input class="i" type="number" value="0" step="0.01" name="i"/>
-        </label>
-        <label>
-          <span>j:</span>
-          <input class="j" type="number" value="0" step="0.01" name="j"/>
-        </label>
-        <label>
-          <span>k:</span>
-          <input class="k" type="number" value="0" step="0.01" name="k"/>
-        </label>  
+      `
+        <intention-float-value class="roll" value="0" step="0.01">Real</intention-float-value>
+        <intention-float-value class="i" value="0" step="0.01">i</intention-float-value>
+        <intention-float-value class="j" value="0" step="0.01">i</intention-float-value>
+        <intention-float-value class="k" value="0" step="0.01">i</intention-float-value>        
       `;
 
   #readOnly = false;
