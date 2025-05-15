@@ -5,7 +5,7 @@ import { FlexPanel } from '../flexPanel/flexPanel.js';
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
 class FloatValue extends FlexPanel {
-  #template = `    
+  template = `    
     <span></span>
     <input type="number" value="0" step="0.01"/>
   `;
@@ -16,7 +16,7 @@ class FloatValue extends FlexPanel {
 
   async render() {
     const body = this.innerHTML;
-    this.innerHTML = this.#template;
+    this.innerHTML = this.template;
     this.components = {
       title: this.querySelector('span'),
       val: this.querySelector('input')
