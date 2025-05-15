@@ -11,7 +11,7 @@ class FloatValue extends FlexPanel {
 
   async render() {
     const body = this.innerHTML;
-    template = `    
+    const template = `    
       <span></span>
       <input type="number" value="0" step="0.01"/>
     `;
