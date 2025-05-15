@@ -10,10 +10,10 @@ export class FlexPanel extends Container {
   }
 
   set direction(value) { 
-    this.style['flex-direction'] = value; 
+    this.style['flexDirection'] = value; 
   }
   get direction() { 
-    return this.style['flex-direction'] 
+    return this.style['flexDirection'];
   }
 
   set gap(value) { 
