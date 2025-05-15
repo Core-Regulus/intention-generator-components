@@ -10,8 +10,6 @@ class FloatValue extends FlexPanel {
     <input type="number" value="0" step="0.01"/>
   `;
 
-  #readOnly = false;
-
   constructor() {
     super();
     const body = this.innerHTML;
@@ -28,11 +26,10 @@ class FloatValue extends FlexPanel {
   get value() { return this.components.val.value; }
 
   set readOnly(value) {
-    this.#readOnly = value;
-    this.components.val.readOnly = this.#readOnly;
+    this.components.val.readOnly = value;
   }
 
-  get readOnly() { return this.#readOnly; }
+  get readOnly() { this.components.val.readOnly; }
 }
 
 customElements.define('intention-float-value', FloatValue);
