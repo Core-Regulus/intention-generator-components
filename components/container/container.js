@@ -1,15 +1,16 @@
 import attributes from '../attributes/attributes.js';
 
 export class Container extends HTMLElement {
-  constructor() {    
-    super();    
-    this.render();
-    attributes.loadAttributes(this);
+  constructor() {
+    super();
+    this.render().then(() => {
+      attributes.loadAttributes(this);
+    });
   }
 
-  async render() {}  
+  async render() { }
 }
 
 export default {
-    Container
+  Container
 }
