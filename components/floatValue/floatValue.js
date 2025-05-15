@@ -5,10 +5,6 @@ import { FlexPanel } from '../flexPanel/flexPanel.js';
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
 class FloatValue extends FlexPanel {
-  constructor() {    
-    super();    
-  }
-
   async render() {
     const body = this.innerHTML;
     const template = `    
