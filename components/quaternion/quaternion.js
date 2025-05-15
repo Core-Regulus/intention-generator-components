@@ -15,6 +15,7 @@ class Quaternion extends FlexPanel {
 
   async render() {
     this.innerHTML = this.template;
+    this.direction = 'column';
     this.components = {
       real: this.querySelector('.real'),
       i: this.querySelector('.i'),
