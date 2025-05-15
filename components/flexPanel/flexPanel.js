@@ -1,14 +1,13 @@
 import loader from '../loader/loader.js';
-import attributes from '../attributes/attributes.js';
+import Container from '../container/container.js';
 
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
 
-export class FlexPanel extends HTMLElement {
+export class FlexPanel extends Container {
   #direction = 'horizontal';
-  constructor() {
+  constructor() {    
+    this.classList.add('intention-flex-panel');
     super();
-    this.classList.add('intention-flex-panel')
-    attributes.loadAttributes(this);
   }
 
   set direction(value) {
