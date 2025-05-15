@@ -4,8 +4,7 @@ intention-float-value {
 }
 
 intention-float-value span {
-  width: 75px;
-  white-space: nowrap;
+  width: 75px;  
   text-align: right; 
 }
 
