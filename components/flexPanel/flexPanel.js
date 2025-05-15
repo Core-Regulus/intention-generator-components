@@ -3,25 +3,15 @@ import { Container } from '../container/container.js';
 
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
 
-export class FlexPanel extends Container {
-  #direction = 'horizontal';
+export class FlexPanel extends Container {    
   constructor() {        
     super();
     this.classList.add('intention-flex-panel');
   }
 
-  set direction(value) {
-    this.classList.remove(this.#direction);
-    this.classList.add(value);
-    this.#direction = value;
-  }
-
-  get direction() { return this.#direction; }
-  
-  set gap(value) {
-    this.style.gap = value;    
-  }
-
+  set direction(value) { this.style['flex-direction'] = value; }
+  get direction() { return this.style['flex-direction'] }
+  set gap(value) { this.style.gap = value; }
   get gap() { return this.style.gap; }
 }
 
