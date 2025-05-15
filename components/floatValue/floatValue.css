@@ -1,9 +1,16 @@
 intention-float-value {
   display: flex;
+  gap: 0.5rem;
 }
 
 intention-float-value span {
   width: 75px;
+  white-space: nowrap;
+  text-align: right; 
+}
+
+intention-float-value input:read-only {
+  width: 3rem;
 }
 
 intention-float-value input:read-only {
