@@ -8,7 +8,7 @@ class Title extends Container {
 
   set size(value) {
     this._size = value;
-    render();
+    this.render();
   }
 
   get size() { return this._size; }
