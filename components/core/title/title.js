@@ -4,20 +4,15 @@ import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./title.css'));
 
 class Title extends Container {
-  #size = 1;
+  _size = 1;
 
   set size(value) {
-    this.#size = value;
+    this._size = value;
     this.render();
   }
 
-  get size() { return this.#size; }
+  get size() { return this._size ?? 1; }
   
-  constructor () {
-    super();
-    this.#size = 1;
-  }
-
   async render() {
     const body = this.firstChild?.innerHTML || this.innerHTML;
     this.innerHTML = `
