@@ -9,7 +9,7 @@ class Title extends Container {
 
   set size(value) {
     this._size = value;
-    this._element = null;
+    this._header = null;
     this.render();
   }
 
