@@ -32,7 +32,7 @@ get header() {
       target;
     this.copyChildNodes(target, source);
     this.appendChild(target);
-
+    this._oldHeader = null;
   }
 }
 
