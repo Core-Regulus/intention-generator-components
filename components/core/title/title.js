@@ -25,9 +25,9 @@ get header() {
   
   async render() {
     const target = this.header;
-    const source = (hd.children.length == 0) ?
+    const source = (target.children.length == 0) ?
       this :
-      this.header;
+      target;
     this.copyChildren(target, source);
     this.appendChild(target);
 

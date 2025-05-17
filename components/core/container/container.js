@@ -16,6 +16,7 @@ export class Container extends HTMLElement {
   get template() { return this.#template; }
 
   copyChildren(dest, source) {
+    if (target == source) return;
     for (const item of source.children) {
       dest.appendChild(item);
     }
