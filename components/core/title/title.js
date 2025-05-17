@@ -5,8 +5,8 @@ loader.loadCSS(import.meta.resolve('./title.css'));
 
 class Title extends Container {
   _size = 1;
-  _header = null;
-  _oldHeader = null;
+  _header;
+  _oldHeader;
 
   set size(value) {
     this._size = value;
