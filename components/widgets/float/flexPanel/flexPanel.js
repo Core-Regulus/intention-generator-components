@@ -1,4 +1,4 @@
-import loader from '../loader/loader.js';
+import loader from '../../../core/loader/loader.js';
 import { FlexPanel } from '../../../core/flexPanel/flexPanel.js';
 
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
