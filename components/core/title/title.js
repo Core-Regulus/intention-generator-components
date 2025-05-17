@@ -4,7 +4,7 @@ import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./title.css'));
 
 class Title extends Container {
-  #size;
+  #size = 1;
 
   set size(value) {
     this.#size = value;
@@ -14,8 +14,8 @@ class Title extends Container {
   get size() { return this.#size; }
   
   constructor () {
+    super();
     this.#size = 1;
-    super();  
   }
 
   async render() {
