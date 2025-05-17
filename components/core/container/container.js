@@ -15,9 +15,9 @@ export class Container extends HTMLElement {
   set template(value) { this.#template = value; }
   get template() { return this.#template; }
 
-  copyChildren(dest, source) {
+  copyChildNodes(dest, source) {
     if (dest == source) return;
-    for (const item of source.children) {
+    for (const item of source.childNodes) {
       dest.appendChild(item);
     }
   }

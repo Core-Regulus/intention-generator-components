@@ -25,10 +25,10 @@ get header() {
   
   async render() {
     const target = this.header;
-    const source = (target.children.length == 0) ?
+    const source = (target.childNodes.length == 0) ?
       this :
       target;
-    this.copyChildren(target, source);
+    this.copyChildNodes(target, source);
     this.appendChild(target);
 
   }
