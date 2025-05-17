@@ -6,9 +6,11 @@ loader.loadCSS(import.meta.resolve('./title.css'));
 class Title extends Container {
   _size = 1;
   _header = null;
+  _oldHeader = null;
 
   set size(value) {
     this._size = value;
+    this._oldHeader = this._header;
     this._header = null;
     this.render();
   }
@@ -24,7 +26,7 @@ get header() {
   }
   
   async render() {
-    const target = this.header;
+    const target = this._oldHeader || this.header;
     const source = (target.childNodes.length == 0) ?
       this :
       target;
