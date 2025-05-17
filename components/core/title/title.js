@@ -4,10 +4,6 @@ import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./title.css'));
 
 class Title extends Container {
-  _size = 1;
-  _header;
-  _oldHeader;
-
   set size(value) {
     this._size = value;
     this._oldHeader = this._header;
