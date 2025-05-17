@@ -22,10 +22,8 @@ get header() {
   }
   
   async render() {
-    const target = this._oldHeader || this.header;
-    const source = (target.childNodes.length == 0) ?
-      this :
-      target;
+    const target = this.header;
+    const source = this._oldHeader || this;
     this.copyChildNodes(target, source);
     this.appendChild(target);
     this._oldHeader = null;
