@@ -25,6 +25,7 @@ get header() {
     const target = this.header;
     const source = this._oldHeader || this;
     this.copyChildNodes(target, source);
+    this.innerHTML = '';
     this.appendChild(target);
     this._oldHeader = null;
   }
