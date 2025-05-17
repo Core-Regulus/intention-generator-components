@@ -13,6 +13,10 @@ class Title extends Container {
 
   get size() { return this._size; }
   
+  constructor () {
+    super();  
+  }
+
   async render() {
     const body = this.firstChild?.innerHTML || this.innerHTML;
     this.innerHTML = `
