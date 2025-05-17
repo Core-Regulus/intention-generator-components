@@ -16,7 +16,7 @@ class Title extends Container {
   async render() {
     const body = this.innerHTML;
     this.innerHTML = `
-      <h${this._size}>${body}</h${this._size}>
+      <h${this.size}>${body}</h${this.size}>
     `;
   }
 }
