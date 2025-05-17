@@ -4,16 +4,17 @@ import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./title.css'));
 
 class Title extends Container {
-  _size = 1;
+  #size;
 
   set size(value) {
-    this._size = value;
+    this.#size = value;
     this.render();
   }
 
-  get size() { return this._size; }
+  get size() { return this.#size; }
   
   constructor () {
+    this.#size = 1;
     super();  
   }
 
