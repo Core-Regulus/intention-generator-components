@@ -14,7 +14,7 @@ function fillCells(col, colsCount) {
 function buildCells(rows = 0, cols = 0, cells = []) {
   cells.length = rows;
   for(let r = 0; r < rows; r++) {
-    cells[r] = cells[r] ?? fillCells(cells[r], cols);
+    cells[r] = fillCells(cells[r], cols);
   }
   return cells;
 }
