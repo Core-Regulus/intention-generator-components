@@ -9,7 +9,7 @@ intention-float-value span {
 }
 
 intention-float-value input {
-  width: 3rem;
+  width: 100%;
 }
 
 intention-float-value input:read-only {
