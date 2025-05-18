@@ -7,7 +7,7 @@ function fillCells(col, colsCount) {
   const rCol = col || [];
   const nCols = Number(colsCount);
   for (let c = 0; c < nCols; c++) {
-    rCol[c] = rCol[c] ?? { width: 'max-content', height: 'max-content' };
+    rCol[c] = rCol[c] ?? { width: 'min-content', height: 'min-content' };
   }
   return rCol;
 }
@@ -24,7 +24,7 @@ function buildCells(rows = 0, cols = 0, cells = []) {
 function getTemplateRows(cells) {
   const res = [];
   for (const cell of cells) {
-    res.push(cell[0]?.height ?? 'max-content');
+    res.push(cell[0]?.height ?? 'min-content');
   }
   return res.join(' ');
 }
@@ -32,7 +32,7 @@ function getTemplateRows(cells) {
 function getTemplateCols(cells) {
   const res = [];
   for (const cell of cells[0]) {
-    res.push(cell.width ?? 'max-content');
+    res.push(cell.width ?? 'min-content');
   }
   return res.join(' ');
 }
