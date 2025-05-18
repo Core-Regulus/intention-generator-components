@@ -6,7 +6,7 @@ loader.loadCSS(import.meta.resolve('./gridPanel.css'));
 function fillCells(col, colsCount) {
   const rCol = col || [];
   for (let c = 0; c < colsCount; c++) {
-    rCol[c] ??= { width: '1fr', height: '1fr' };
+    rCol[c] ??= { width: 'auto', height: 'auto' };
   }
   return rCol;
 }
@@ -22,7 +22,7 @@ function buildCells(rows = 0, cols = 0, cells = []) {
 function getTemplateRows(cells) {
   const res = [];
   for (const cell of cells) {
-    res.push(cell[0]?.height ?? '1fr');
+    res.push(cell[0]?.height ?? 'auto');
   }
   return res.join(' ');
 }
@@ -30,7 +30,7 @@ function getTemplateRows(cells) {
 function getTemplateCols(cells) {
   const res = [];
   for (const cell of cells[0]) {
-    res.push(cell.width ?? '1fr');
+    res.push(cell.width ?? 'auto');
   }
   return res.join(' ');
 }
