@@ -1,6 +1,23 @@
 intention-dashboard-page {
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   width: 100%;
   display: block;
+  background-color: #1b1845;
+  color: #fcfdff;
+}
+
+intention-dashboard-page input {
+  border-color: #2b72de;
+  background-color: #292864;
+  color: #fcfdff;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  width: 100%
+}
+
+intention-dashboard-page intention-flex-panel {
+  background-color: #2b2968;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }

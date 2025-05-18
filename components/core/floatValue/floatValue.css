@@ -13,7 +13,15 @@ intention-float-value input {
   width: 100%;
 }
 
+intention-float-value input:focus {
+  outline: none;
+}
+
 intention-float-value input:read-only {
   outline: none;
   border: none;
+}
+
+intention-float-value .title {
+  width: 75px;
 }
