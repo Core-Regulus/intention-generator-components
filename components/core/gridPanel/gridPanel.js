@@ -36,14 +36,15 @@ function getTemplateCols(cells) {
 }
 
 
-export class GridPanel extends Container {    
-  updateTemplates() {
+export class GridPanel extends Container {
+  _updateTemplates() {
     this.style['grid-template-rows'] = getTemplateRows(this_cells);
     this.style['grid-template-cols'] = getTemplateCols(this_cells);
   }
 
   set cols(value) {
     this._cells = buildCells(this._cells?.length, value, this._cells);
+    this._updateTemplates();
   }
 
   get cols() {
@@ -51,7 +52,8 @@ export class GridPanel extends Container {
   }
 
   set rows(value) {
-    this._cells = buildCells(value, this.cells?.[0]?.lenght, this._cells);    
+    this._cells = buildCells(value, this.cells?.[0]?.lenght, this._cells);
+    this._updateTemplates();
   }
 
   get rows() {
@@ -63,8 +65,7 @@ export class GridPanel extends Container {
   }
 
   get gap() { return this.style.gap; }
-
-  get columns() { return this._columns; }
+  get cells() { return this._cells; }
 }
 
 customElements.define('intention-grid-panel', GridPanel);
