@@ -6,7 +6,7 @@ loader.loadCSS(import.meta.resolve('./gridPanel.css'));
 function fillCells(col, colsCount) {
   const rCol = col || [];
   for (let c = 0; c < colsCount; c++) {
-    rCol[c] ??= { width: 'auto', height: 'auto' };
+    rCol[c] = rCol[c] ?? { width: 'auto', height: 'auto' };
   }
   return rCol;
 }
@@ -14,7 +14,7 @@ function fillCells(col, colsCount) {
 function buildCells(rows = 0, cols = 0, cells = []) {
   cells.length = rows;
   for(let r = 0; r < rows; r++) {
-    cells[r] ??= fillCells(cells[r], cols);
+    cells[r] = cells[r] ?? fillCells(cells[r], cols);
   }
   return cells;
 }
