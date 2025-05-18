@@ -41,7 +41,7 @@ function getTemplateCols(cells) {
 export class GridPanel extends Container {
   _updateTemplates() {
     this.style['gridTemplateRows'] = getTemplateRows(this._cells);
-    this.style['gridTemplateCols'] = getTemplateCols(this._cells);
+    this.style['gridTemplateColumns'] = getTemplateCols(this._cells);
   }
 
   set cols(value) {
