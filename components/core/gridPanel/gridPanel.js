@@ -22,7 +22,7 @@ function buildCells(rows = 0, cols = 0, cells = []) {
 function getTemplateRows(cells) {
   const res = [];
   for (const cell of cells) {
-    res.push(cell[0].height ?? '1fr');
+    res.push(cell[0]?.height ?? '1fr');
   }
   return res.join(' ');
 }
