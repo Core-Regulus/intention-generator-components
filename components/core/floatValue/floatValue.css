@@ -1,6 +1,7 @@
 intention-float-value {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 intention-float-value span {
