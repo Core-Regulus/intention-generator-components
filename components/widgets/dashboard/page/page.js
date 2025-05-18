@@ -5,4 +5,4 @@ loader.loadCSS(import.meta.resolve('./page.css'));
 
 export class DashboardPage extends Page {}
 
-customElements.define('intention-dashboard-page', Page);
+customElements.define('intention-dashboard-page', DashboardPage);
