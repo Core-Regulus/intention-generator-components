@@ -20,6 +20,7 @@ intention-float-value input:focus {
 intention-float-value input:read-only {
   outline: none;
   border: none;
+  background-color: transparent;
 }
 
 intention-float-value .title {
