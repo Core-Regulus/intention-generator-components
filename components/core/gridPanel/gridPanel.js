@@ -65,6 +65,13 @@ export class GridPanel extends Container {
     return this._cells[index];
   }
 
+  setRow(index, attribute, value) {
+    const row = this.getRow(index);
+    if (row == null) return false;
+    row[attribute] =value;
+    this._updateTemplates();
+  }
+
   set gap(value) { 
     this.style.gap = value; 
   }
