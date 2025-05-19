@@ -15,10 +15,7 @@ export class Container extends HTMLElement {
     const tt = typeof this.template;
     if (tt == 'string')
       this.innerHTML = this.template; 
-    else if (this.template instanceof NodeList) {
-      this.copyChildNodes(this. this.template);
-    }
-    else {
+    else if (this.template instanceof HTMLElement) {
       this.appendChild(body);
     }
     dom.collectComponents(this);
