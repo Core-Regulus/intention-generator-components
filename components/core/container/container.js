@@ -1,5 +1,4 @@
 import attributes from '../attributes/attributes.js';
-import attributes from '../attributes/attributes.js';
 import dom from '../dom/dom.js';
 
 export class Container extends HTMLElement {
