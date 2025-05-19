@@ -5,6 +5,7 @@ intention-dashboard-page {
   display: block;
   background-color: #1b1845;
   color: #fcfdff;
+  min-height: 100%;
 }
 
 intention-dashboard-page input {
