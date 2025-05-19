@@ -10,6 +10,10 @@ export class FlexPanel extends Container {
     return this.style['flexDirection'];
   }
 
+  get template() {
+    return this.childNodes;
+  }
+
   set gap(value) { 
     this.style.gap = value; 
   }

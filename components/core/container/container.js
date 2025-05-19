@@ -1,18 +1,26 @@
 import attributes from '../attributes/attributes.js';
 import dom from '../dom/dom.js';
 
-export class Container extends HTMLElement {
-  #template = '';
-  
+export class Container extends HTMLElement {  
+  #template = null;
+
   constructor() {
-    super();
+    super();    
     this.render().then(() => {
       attributes.loadAttributes(this);      
     });
   }
 
   async render() {
-    this.innerHTML = this.template; 
+    const tt = typeof this.template;
+    if (tt == 'string')
+      this.innerHTML = this.template; 
+    else if (Array.isArray(this.template)) {
+      this.copyChildNodes(this. this.template);
+    }
+    else {
+      this.appendChild(body);
+    }
     dom.collectComponents(this);
   }
 
