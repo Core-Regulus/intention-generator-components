@@ -68,7 +68,8 @@ export class GridPanel extends Container {
   setRow(index, attribute, value) {
     const row = this.getRow(index);
     if (row == null) return false;
-    row[attribute] =value;
+    const rCell = row[0];
+    rCell[attribute] =value;
     this._updateTemplates();
   }
 
