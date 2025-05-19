@@ -1,9 +1,8 @@
 import loader from '../loader/loader.js';
 import { Container } from '../container/container.js';
-
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
 
-export class FlexPanel extends Container {    
+export class FlexPanel extends Container {  
   set direction(value) { 
     this.style['flexDirection'] = value; 
   }

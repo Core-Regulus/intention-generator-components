@@ -1,27 +1,13 @@
 import loader from '../loader/loader.js';
-import attributes from '../attributes/attributes.js';
+import { Container } from '../container/container.js';
 
 loader.loadCSS(import.meta.resolve('./led.css'));
 
-class Led extends HTMLElement {
+class Led extends Container {
   #template = `
-    <span class="led"></span>
-    <span class="title"></span>
+    <span class="led" name="led"></span>
+    <span class="title" name="title"></span>
   `;
-
-  #value = false;
-
-  constructor() {
-    super();
-    const body = this.innerHTML;
-    this.innerHTML = this.#template;
-    this.components = {
-      title: this.querySelector('.title'),
-      led: this.querySelector('.led')
-    };
-    this.components.title.innerHTML = body;
-    attributes.loadAttributes(this);
-  }  
   
   set value(value) { 
     if (value == true) {

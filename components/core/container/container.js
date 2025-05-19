@@ -1,4 +1,6 @@
 import attributes from '../attributes/attributes.js';
+import attributes from '../attributes/attributes.js';
+import dom from '../dom/dom.js';
 
 export class Container extends HTMLElement {
   #template = '';
@@ -6,11 +8,14 @@ export class Container extends HTMLElement {
   constructor() {
     super();
     this.render().then(() => {
-      attributes.loadAttributes(this);
+      attributes.loadAttributes(this);      
     });
   }
 
-  async render() { }
+  async render() {
+    this.innerHTML = this.template; 
+    dom.collectComponents(this);
+  }
 
   set template(value) { this.#template = value; }
   get template() { return this.#template; }

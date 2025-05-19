@@ -1,31 +1,25 @@
 import * as THREE from 'three';
 import '../floatValue/floatValue.js'
-import attributes from '../attributes/attributes.js'
+import { Container } from '../container/container.js'
 import loader from '../loader/loader.js';
 
 loader.loadCSS(import.meta.resolve('./euler.css'));
 
 
-class Euler extends HTMLElement {
-  #template = `
-    <intention-float-value class="roll" value="0">Roll:</intention-float-value>
-    <intention-float-value class="pitch" value="0">Pitch:</intention-float-value>
-    <intention-float-value class="yaw" value="0">Yaw:</intention-float-value>    
-  `;
+class Euler extends Container {
+  get template() {
+    return `
+      <intention-float-value class="roll" value="0" name="roll">Roll:</intention-float-value>
+      <intention-float-value class="pitch" value="0" name="pitch">Pitch:</intention-float-value>
+      <intention-float-value class="yaw" value="0" name="yaw">Yaw:</intention-float-value>    
+    `;
+  }
 
   #readOnly = false;
   
   constructor() {
-    super();
-    this.innerHTML = this.#template;    
-    this.components = {
-      roll: this.querySelector('.roll'),
-      pitch: this.querySelector('.pitch'),
-      yaw: this.querySelector('.yaw'),
-    };
-    attributes.loadAttributes(this);
+    super();    
   } 
-
 
   get readOnly() { return this.#readOnly; }
 

@@ -6,22 +6,16 @@ loader.loadCSS(import.meta.resolve('./quaternion.css'));
 class Quaternion extends FlexPanel {  
   get template() {
     return `
-      <intention-float-value class="real" value="0" step="0.01">Real:</intention-float-value>
-      <intention-float-value class="i" value="0" step="0.01">i:</intention-float-value>
-      <intention-float-value class="j" value="0" step="0.01">j:</intention-float-value>
-      <intention-float-value class="k" value="0" step="0.01">k:</intention-float-value>        
+      <intention-float-value class="real" value="0" step="0.01" name="real">Real:</intention-float-value>
+      <intention-float-value class="i" value="0" step="0.01" name="i">i:</intention-float-value>
+      <intention-float-value class="j" value="0" step="0.01" name="j">j:</intention-float-value>
+      <intention-float-value class="k" value="0" step="0.01" name="k:>k:</intention-float-value>
     `;
   }
 
   async render() {
-    this.innerHTML = this.template;
+    super.render();    
     this.direction = 'column';
-    this.components = {
-      real: this.querySelector('.real'),
-      i: this.querySelector('.i'),
-      j: this.querySelector('.j'),
-      k: this.querySelector('.k'),
-    };    
   }
     
   set i(value) { this.components.i.value = value.toFixed(3); }
