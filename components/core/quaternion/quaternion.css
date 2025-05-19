@@ -1,5 +1,13 @@
+intention-quaternion {
+  width: 100%;
+}
+
 intention-quaternion span {
   width: 75px;
+}
+
+intention-quaternion input {
+  width: auto;
 }
 
 intention-quaternion input:read-only {
