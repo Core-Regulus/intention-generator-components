@@ -1,6 +1,5 @@
 import attributes from '../attributes/attributes.js';
 import dom from '../dom/dom.js';
-import { GridPanel } from '../gridPanel/gridPanel.js';
 
 export class Container extends HTMLElement {  
   #template = null;
