@@ -1,11 +1,9 @@
-intention-flex-panel,
-.intention-flex-panel {
+intention-flex-panel {
   display: flex; 
   flex-direction: row;
   width: min-content;
 }
 
-intention-flex-panel.vertical,
-.intention-flex-panel.vertical {
+intention-flex-panel.vertical {
   flex-direction: column;
 }

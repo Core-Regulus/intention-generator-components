@@ -4,11 +4,6 @@ import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
 
 export class FlexPanel extends Container {    
-  constructor() {        
-    super();
-    this.classList.add('intention-flex-panel');
-  }
-
   set direction(value) { 
     this.style['flexDirection'] = value; 
   }
