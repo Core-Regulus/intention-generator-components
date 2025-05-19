@@ -43,22 +43,26 @@ export class GridPanel extends Container {
     this.style['gridTemplateColumns'] = getTemplateCols(this._cells);
   }
 
-  set cols(value) {
+  set colCount(value) {
     this._cells = buildCells(this._cells?.length, value, this._cells);
     this._updateTemplates();
   }
 
-  get cols() {
+  get colCount() {
     return this._cells?.[0]?.length ?? 0;
   }
 
-  set rows(value) {
+  set rowCount(value) {
     this._cells = buildCells(value, this.cells?.[0]?.lenght, this._cells);
     this._updateTemplates();
   }
 
-  get rows() {
+  get rowCount() {
    return this._cells?.length ?? 0;
+  }
+
+  getRow(index) {
+    return this._cells[index];
   }
 
   set gap(value) { 

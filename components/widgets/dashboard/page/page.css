@@ -5,6 +5,7 @@ intention-dashboard-page {
   display: block;
   background-color: #1b1845;
   color: #fcfdff;
+  height: 100%;
   min-height: 100%;
 }
 
