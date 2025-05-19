@@ -5,7 +5,8 @@ export class Container extends HTMLElement {
   #template = null;
 
   constructor() {
-    super();     
+    super();
+    console.log(this.constructor.name);
     this.render().then(() => {
       attributes.loadAttributes(this);      
     });
