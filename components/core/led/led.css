@@ -7,6 +7,8 @@ intention-led .led {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 intention-led .led {
