@@ -19,7 +19,7 @@ class FloatValue extends FlexPanel {
     this.components.title.innerHTML = body;
   }
 
-  set value(value) { this.components.val.value = value.toFixed(3); }
+  set value(value) { this.components.val.value = value; }
   get value() { return this.components.val.value; }
 
   set step(value) { this.components.val.step = value; }
