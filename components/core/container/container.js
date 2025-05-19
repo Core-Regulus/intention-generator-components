@@ -6,10 +6,7 @@ export class Container extends HTMLElement {
   #template = null;
 
   constructor() {
-    super(); 
-    if (this instanceof GridPanel ) {
-      console.log('gotcha');
-    }
+    super();     
     this.render().then(() => {
       attributes.loadAttributes(this);      
     });
