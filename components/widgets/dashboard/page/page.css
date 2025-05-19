@@ -9,6 +9,11 @@ intention-dashboard-page {
   min-height: 100%;
 }
 
+intention-dashboard-page intention-grid-panel {
+  height: 100%;
+}
+
+
 intention-dashboard-page input {
   border-color: #2b72de;
   background-color: #292864;
