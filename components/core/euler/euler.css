@@ -1,3 +1,6 @@
-intention-euler span {
-  width: 75px;
+intention-euler intention-float-value {
+  margin-bottom: 0.25rem;
+}
+intention-euler intention-float-value:last-child {
+  margin-bottom: 0;
 }
