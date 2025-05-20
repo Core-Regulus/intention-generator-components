@@ -6,9 +6,9 @@ export class Container extends HTMLElement {
 
   constructor() {
     super();
-    if (this.constructor.name == 'GridPanel')
-      console.log('Gotcha');
     this.render().then(() => {
+      if (this.constructor.name == 'GridPanel')
+        console.log('Gotcha');
       attributes.loadAttributes(this);      
     });
   }
