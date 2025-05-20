@@ -13,7 +13,8 @@
         if (root[name] == null) root[name] = {};
         root = root[name];        
       }
-      root[name] = el;
+      const lname = string.toCamelCase(namesArray[namesArray.length - 1]);
+      root[lname] = el;
     }
   }
 
