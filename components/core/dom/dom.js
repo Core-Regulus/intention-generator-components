@@ -1,4 +1,5 @@
   import string from '../string/string.js';
+  import attributes from '../attributes/attributes.js';
 
   export function collectComponents(element) {
     if (element.components == null) element.components = {};
