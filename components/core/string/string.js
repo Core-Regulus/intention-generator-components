@@ -28,7 +28,7 @@ export function toBoolean(value) {
 export function isValidName(val) {
   if (val == null) return false;
   if (val == '') return false;
-  const rt = /[A-Za-z0-9]+{3,32}/;
+  const rt = /[A-Za-z0-9]{3,32}/;
   const match = rt.exec(val);
   if (match == null) return false;
   return true;
