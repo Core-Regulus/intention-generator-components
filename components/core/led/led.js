@@ -20,8 +20,12 @@ class Led extends Container {
   }
   get value() { return this.components.val.value; }
 
-  get title() { return this.components.title.innerHTML; }
-  set title(value) { return this.components.title.innerHTML = value; }
+  get title() { 
+    return this.components.title.innerHTML; 
+  }
+  set title(value) { 
+    return this.components.title.innerHTML = value; 
+  }
 }
 
 customElements.define('intention-led', Led);
