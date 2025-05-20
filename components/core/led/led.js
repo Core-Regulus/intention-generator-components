@@ -4,10 +4,12 @@ import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./led.css'));
 
 class Led extends Container {
-  #template = `
-    <span class="led" name="led"></span>
-    <span class="title" name="title"></span>
-  `;
+  get template() {
+    return `
+      <span class="led" name="led"></span>
+      <span class="title" name="title"></span>
+    `;
+  }
   
   set value(value) { 
     if (value == true) {
