@@ -46,7 +46,7 @@ export function loadAttributes(htmlElement) {
 
 export function get(htmlElement, name) {
   const ta = htmlElement.getAttribute(name);
-  if (ta == null) return null;
+  if (ta != null) return ta;
   const td = htmlElement.getAttribute(`data-name`);
   return td;
 }
