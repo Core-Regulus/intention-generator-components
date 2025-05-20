@@ -30,8 +30,8 @@ export function getString(htmlElement, attrName) {
   return toString(attr);
 }
 
-function getName(attr) {
-  return string.toCamelCase(attr.name, skipAttrNamePart);
+function getName(attrName) {
+  return string.toCamelCase(attrName, skipAttrNamePart);
 }
 
 export function loadAttributes(htmlElement) {
