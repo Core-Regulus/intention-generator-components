@@ -5,20 +5,13 @@ import { FlexPanel } from '../flexPanel/flexPanel.js';
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
 class FloatValue extends FlexPanel {
-  async render() {
-    const body = this.innerHTML;
-    const template = `    
-      <span class="title"></span>
+  get template() {
+    return `    
+      <span class="title">${this.innerHTML}</span>
       <input class="value" type="number" value="0" step="0.01"/>
     `;
-    this.innerHTML = template;
-    this.components = {
-      title: this.querySelector('.title'),
-      val: this.querySelector('.value')
-    };
-    this.components.title.innerHTML = body;
   }
-
+  
   set value(value) { this.components.val.value = value; }
   get value() { return this.components.val.value; }
 

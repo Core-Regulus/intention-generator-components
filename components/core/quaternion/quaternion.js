@@ -9,7 +9,7 @@ class Quaternion extends FlexPanel {
       <intention-float-value class="real" value="0" step="0.01" name="real">Real:</intention-float-value>
       <intention-float-value class="i" value="0" step="0.01" name="i">i:</intention-float-value>
       <intention-float-value class="j" value="0" step="0.01" name="j">j:</intention-float-value>
-      <intention-float-value class="k" value="0" step="0.01" name="k:>k:</intention-float-value>
+      <intention-float-value class="k" value="0" step="0.01" name="k">k:</intention-float-value>
     `;
   }
 
