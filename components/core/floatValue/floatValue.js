@@ -12,26 +12,26 @@ class FloatValue extends FlexPanel {
     `;
   }
   
-  set value(value) { this.components.val.value = value; }
-  get value() { return this.components.val.value; }
+  set value(value) { this.components.value.value = value; }
+  get value() { return this.components.value.value; }
 
-  set step(value) { this.components.val.step = value; }
-  get step() { return this.components.val.step; }
+  set step(value) { this.components.value.step = value; }
+  get step() { return this.components.value.step; }
 
-  set min(value) { this.components.val.min = value; }
-  get min() { return this.components.val.min; }
+  set min(value) { this.components.value.min = value; }
+  get min() { return this.components.value.min; }
 
-  set max(value) { this.components.val.max = value; }
-  get max() { return this.components.val.max; }
+  set max(value) { this.components.value.max = value; }
+  get max() { return this.components.value.max; }
 
   set titleWidth(value) { this.components.title.style.width = value; }
   get titleWidth() { return this.components.title.style.width; }
 
   set readOnly(value) {
-    this.components.val.readOnly = value;
+    this.components.value.readOnly = value;
   }
 
-  get readOnly() { this.components.val.readOnly; }
+  get readOnly() { this.components.value.readOnly; }
 }
 
 customElements.define('intention-float-value', FloatValue);
