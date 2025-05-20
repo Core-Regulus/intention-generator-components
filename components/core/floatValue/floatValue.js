@@ -7,8 +7,8 @@ loader.loadCSS(import.meta.resolve('./floatValue.css'));
 class FloatValue extends FlexPanel {
   get template() {
     return `    
-      <span class="title">${this.innerHTML}</span>
-      <input class="value" type="number" value="0" step="0.01"/>
+      <span class="title" name="title">${this.innerHTML}</span>
+      <input class="value" name="value" type="number" value="0" step="0.01"/>
     `;
   }
   
