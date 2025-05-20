@@ -5,10 +5,9 @@ loader.loadCSS(import.meta.resolve('./led.css'));
 
 class Led extends Container {
   get template() {
-    this.title = this.innerHTML;
     return `
       <span class="led" name="led"></span>
-      <span class="title" name="title"></span>
+      <span class="title" name="title">${this.innerHTML}</span>
     `;
   }
   
