@@ -25,11 +25,21 @@ export function toBoolean(value) {
   return value === 'true' || value === '1';  
 }
 
+export function isValidName(val) {
+  if (val == null) return false;
+  if (val == '') return false;
+  const rt = /[A-Za-z0-9]?{3,32}/;
+  const match = rt.exec(val);
+  if (match == null) return false;
+  return true;
+}
+
 
 
 export default {
-    toCamelCase,
-    capitalize,
-    toString,
-    toBoolean
+  toCamelCase,
+  capitalize,
+  toString,
+  toBoolean,
+  isValidName
 }

@@ -1,9 +1,8 @@
 import loader from '../loader/loader.js';
-import { Container } from '../container/container.js';
 
 loader.loadCSS(import.meta.resolve('./errorMessage.css'));
 
-class ErrorMessage extends Container {  
+class ErrorMessage extends HTMLElement {  
   constructor() {
     super();
     window.addEventListener('error', (event) => {
@@ -14,8 +13,6 @@ class ErrorMessage extends Container {
       this.message = event.reason.message;
     });
   }
-  
-  async render() {} 
   set message(value) { this.innerHTML = value; }
   get message() { return this.innerHTML; }
 

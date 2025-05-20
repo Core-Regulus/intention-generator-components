@@ -1,10 +1,9 @@
 import loader from '../loader/loader.js';
-import attributes from '../attributes/attributes.js';
-import { FlexPanel } from '../flexPanel/flexPanel.js';
+import { ComponentRoot } from '../componentRoot/componentRoot.js';
 
 loader.loadCSS(import.meta.resolve('./floatValue.css'));
 
-class FloatValue extends FlexPanel {
+class FloatValue extends ComponentRoot {
   get template() {
     return `    
       <span class="title" name="title">${this.innerHTML}</span>

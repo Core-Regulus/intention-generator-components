@@ -1,9 +1,9 @@
 import loader from '../loader/loader.js';
-import { Container } from '../container/container.js';
+import { ComponentRoot } from '../componentRoot/componentRoot.js';
 
 loader.loadCSS(import.meta.resolve('./led.css'));
 
-class Led extends Container {
+class Led extends ComponentRoot {
   get template() {
     return `
       <span class="led" name="led"></span>

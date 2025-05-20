@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 import '../floatValue/floatValue.js'
-import { Container } from '../container/container.js'
 import loader from '../loader/loader.js';
+import { ComponentRoot } from '../componentRoot/componentRoot.js';
 
 loader.loadCSS(import.meta.resolve('./euler.css'));
 
 
-class Euler extends Container {
+class Euler extends ComponentRoot {
   get template() {
     return `
       <intention-float-value class="roll" value="0" name="roll">Roll:</intention-float-value>
@@ -18,7 +18,7 @@ class Euler extends Container {
   #readOnly = false;
   
   constructor() {
-    super();    
+    super();
   } 
 
   get readOnly() { return this.#readOnly; }

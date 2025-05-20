@@ -1,5 +1,6 @@
 import attributes from '../attributes/attributes.js';
 import dom from '../dom/dom.js';
+import string from '../string/string.js';
 
 export class Container extends HTMLElement {  
   #template = null;
@@ -18,7 +19,6 @@ export class Container extends HTMLElement {
     else if (this.template instanceof HTMLElement) {
       this.appendChild(body);
     }
-    dom.collectComponents(this);
   }
 
   set template(value) { this.#template = value; }

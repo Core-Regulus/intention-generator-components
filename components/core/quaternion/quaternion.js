@@ -1,9 +1,9 @@
 import loader from '../loader/loader.js';
-import { FlexPanel } from '../flexPanel/flexPanel.js';
+import { ComponentRoot } from '../componentRoot/componentRoot.js';
 
 loader.loadCSS(import.meta.resolve('./quaternion.css'));
 
-class Quaternion extends FlexPanel {  
+class Quaternion extends ComponentRoot {  
   get template() {
     return `
       <intention-float-value class="real" value="0" step="0.01" name="real">Real:</intention-float-value>
@@ -11,11 +11,6 @@ class Quaternion extends FlexPanel {
       <intention-float-value class="j" value="0" step="0.01" name="j">j:</intention-float-value>
       <intention-float-value class="k" value="0" step="0.01" name="k">k:</intention-float-value>
     `;
-  }
-
-  async render() {
-    super.render();    
-    this.direction = 'column';
   }
     
   set i(value) { this.components.i.value = value.toFixed(3); }
