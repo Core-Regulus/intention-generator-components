@@ -7,6 +7,8 @@ export class Container extends HTMLElement {
   constructor() {
     super();
     this.render().then(() => {
+      if (this.constructor.name == 'Led')
+        console.log('gotcha');
       attributes.loadAttributes(this);      
     });
   }
