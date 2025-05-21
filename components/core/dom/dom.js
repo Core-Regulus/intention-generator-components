@@ -23,7 +23,6 @@ export function collectComponents(element) {
   const elements = element.querySelectorAll('[name]');
   for (const el of elements) {
     const name = getStartPath(el, element);
-    console.log(name);
     const namesArray = name.split('.')
     let root = element.components;
     for (let i = 0; i < namesArray.length - 1; i++) {
@@ -32,7 +31,12 @@ export function collectComponents(element) {
       root = root[name];        
     }
     const lname = string.toCamelCase(namesArray[namesArray.length - 1]);
-    root[lname] = el;
+    try {
+      root[lname] = el;
+    } catch (e) {
+      debugger;
+      throw e;
+    }
   }
 }
 
