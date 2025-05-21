@@ -22,10 +22,8 @@ export function collectComponents(element) {
   if (element.components == null) element.components = {};
   const elements = element.querySelectorAll('[name]');
   for (const el of elements) {
-    const startPath = getStartPath(el, element);
-    const name = attributes.get(el, 'name');
-    const fullName = `${startPath}.${name}`;
-    const namesArray = fullName.split('.')
+    const name = getStartPath(el, element);
+    const namesArray = name.split('.')
     let root = element.components;
     for (let i = 0; i < namesArray.length - 1; i++) {
       const name = string.toCamelCase(namesArray[i]);
