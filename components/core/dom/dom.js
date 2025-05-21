@@ -23,6 +23,7 @@ export function collectComponents(element) {
   const elements = element.querySelectorAll('[name]');
   for (const el of elements) {
     const name = getStartPath(el, element);
+    console.log(name);
     const namesArray = name.split('.')
     let root = element.components;
     for (let i = 0; i < namesArray.length - 1; i++) {
