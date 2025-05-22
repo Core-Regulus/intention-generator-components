@@ -22,7 +22,7 @@ export function collectComponents(element) {
   if (element.components == null) element.components = {};
   const elements = element.querySelectorAll('[name]');
   for (const el of elements) {
-    const name = getStartPath(el, element);
+    const name = attributes.get(parent, 'name');
     const namesArray = name.split('.');
     if (namesArray.length == 5)
       debugger;
