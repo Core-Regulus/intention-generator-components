@@ -11,8 +11,9 @@ export class Container extends HTMLElement {
     this.render();
   }
 
-  async render() {
-    if ((this.template == null) && (this.url != null)) {
+  async render(force) {
+    const forceLoad = (window.location.hostname == 'localhost') || force;
+    if (forceLoad && (this.url != null)) {
       const fUrl = string.isURL(this.url) ? 
         this.url :
         window.location.origin + this.url;
@@ -20,11 +21,13 @@ export class Container extends HTMLElement {
     }
     const tt = typeof this.template;    
     if (tt == 'string') {
-      if (this.innerHTML == '')
+      if (forceLoad)
         this.innerHTML = this.template; 
     } else if (this.template instanceof HTMLElement) {
-      if (this.innerHTML == '')
+      if (forceLoad) {
+        this.innerHTML = '';
         this.appendChild(body);
+      }        
     }
   }
 
