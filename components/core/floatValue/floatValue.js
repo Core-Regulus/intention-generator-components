@@ -10,7 +10,7 @@ class FloatValue extends ComponentRoot {
       <input class="value" name="value" type="number" value="0" step="0.01"/>
     `;
   }
-  
+
   set value(value) { this.components.value.value = value; }
   get value() { return this.components.value.value; }
 
@@ -33,4 +33,4 @@ class FloatValue extends ComponentRoot {
   get readOnly() { this.components.value.readOnly; }
 }
 
-customElements.define('intention-float-value', FloatValue);
+customElements.define('i-float-value', FloatValue);

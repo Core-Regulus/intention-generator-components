@@ -12,15 +12,15 @@ class Title extends Container {
   }
 
   get size() { return this._size ?? 1; }
-  
-  
-get header() {
+
+
+  get header() {
     if (this._header == null) {
       this._header = window.document.createElement(`h${this.size}`);
     }
     return this._header;
   }
-  
+
   async render() {
     const target = this.header;
     const source = this._oldHeader || this;
@@ -31,4 +31,4 @@ get header() {
   }
 }
 
-customElements.define('intention-title', Title);
+customElements.define('i-title', Title);

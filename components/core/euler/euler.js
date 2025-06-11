@@ -9,17 +9,17 @@ loader.loadCSS(import.meta.resolve('./euler.css'));
 class Euler extends ComponentRoot {
   get template() {
     return `
-      <intention-float-value class="roll" value="0" name="roll">Roll:</intention-float-value>
-      <intention-float-value class="pitch" value="0" name="pitch">Pitch:</intention-float-value>
-      <intention-float-value class="yaw" value="0" name="yaw">Yaw:</intention-float-value>    
+      i-float-value class="roll" value="0" name="roll">Roll:</intention-float-value>
+      i-float-value class="pitch" value="0" name="pitch">Pitch:</intention-float-value>
+      i-float-value class="yaw" value="0" name="yaw">Yaw:</intention-float-value>    
     `;
   }
 
   #readOnly = false;
-  
+
   constructor() {
     super();
-  } 
+  }
 
   get readOnly() { return this.#readOnly; }
 
@@ -39,9 +39,9 @@ class Euler extends ComponentRoot {
 
   get quaternion() {
     const quaternion = new THREE.Quaternion();
-    const euler = new THREE.Euler( this.roll, this.pitch, this.yaw, 'XYZ' );    
+    const euler = new THREE.Euler(this.roll, this.pitch, this.yaw, 'XYZ');
     return quaternion.setFromEuler(euler);
   }
 }
 
-customElements.define('intention-euler', Euler);
+customElements.define('i-euler', Euler);

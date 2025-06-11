@@ -10,22 +10,22 @@ class Led extends ComponentRoot {
       <span class="title" name="title">${this.innerHTML}</span>
     `;
   }
-  
-  set value(value) { 
+
+  set value(value) {
     if (value == true) {
       this.classList.add('on');
     } else {
-      this.classList.remove('on'); 
+      this.classList.remove('on');
     }
   }
   get value() { return this.components.val.value; }
 
-  get title() { 
-    return this.components.title.innerHTML; 
+  get title() {
+    return this.components.title.innerHTML;
   }
-  set title(value) { 
-    return this.components.title.innerHTML = value; 
+  set title(value) {
+    return this.components.title.innerHTML = value;
   }
 }
 
-customElements.define('intention-led', Led);
+customElements.define('i-led', Led);

@@ -2,11 +2,11 @@ import loader from '../loader/loader.js';
 import { Container } from '../container/container.js';
 loader.loadCSS(import.meta.resolve('./flexPanel.css'));
 
-export class FlexPanel extends Container {  
-  set direction(value) { 
-    this.style['flexDirection'] = value; 
+export class FlexPanel extends Container {
+  set direction(value) {
+    this.style['flexDirection'] = value;
   }
-  get direction() { 
+  get direction() {
     return this.style['flexDirection'];
   }
 
@@ -14,14 +14,14 @@ export class FlexPanel extends Container {
     return this.childNodes;
   }
 
-  set gap(value) { 
-    this.style.gap = value; 
+  set gap(value) {
+    this.style.gap = value;
   }
 
   get gap() { return this.style.gap; }
 }
 
-customElements.define('intention-flex-panel', FlexPanel);
+customElements.define('i-flex-panel', FlexPanel);
 
 export default {
   FlexPanel

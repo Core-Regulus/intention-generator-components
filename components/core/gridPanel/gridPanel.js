@@ -15,7 +15,7 @@ function fillCells(col, colsCount) {
 function buildCells(rows = 0, cols = 0, cells = []) {
   cells.length = rows;
   const nRows = Number(rows);
-  for(let r = 0; r < nRows; r++) {
+  for (let r = 0; r < nRows; r++) {
     cells[r] = fillCells(cells[r], cols);
   }
   return cells;
@@ -58,7 +58,7 @@ export class GridPanel extends Container {
   }
 
   get rowCount() {
-   return this._cells?.length ?? 0;
+    return this._cells?.length ?? 0;
   }
 
   getRow(index) {
@@ -69,19 +69,19 @@ export class GridPanel extends Container {
     const row = this.getRow(index);
     if (row == null) return false;
     const rCell = row[0];
-    rCell[attribute] =value;
+    rCell[attribute] = value;
     this._updateTemplates();
   }
 
-  set gap(value) { 
-    this.style.gap = value; 
+  set gap(value) {
+    this.style.gap = value;
   }
 
   get gap() { return this.style.gap; }
   get cells() { return this._cells; }
 }
 
-customElements.define('intention-grid-panel', GridPanel);
+customElements.define('i-grid-panel', GridPanel);
 
 export default {
   GridPanel

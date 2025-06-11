@@ -2,7 +2,7 @@ import loader from '../loader/loader.js';
 
 loader.loadCSS(import.meta.resolve('./errorMessage.css'));
 
-class ErrorMessage extends HTMLElement {  
+class ErrorMessage extends HTMLElement {
   constructor() {
     super();
     window.addEventListener('error', (event) => {
@@ -18,4 +18,4 @@ class ErrorMessage extends HTMLElement {
 
 }
 
-customElements.define('intention-error-message', ErrorMessage);
+customElements.define('i-error-message', ErrorMessage);
