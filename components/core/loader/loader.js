@@ -144,6 +144,5 @@ export default {
   removeBearerToken,
   loadHTML,
   loadCSS,
-  fetch: tryFetch,
-  getHostName,
+  fetch: tryFetch
 };
