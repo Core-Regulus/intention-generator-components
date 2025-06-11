@@ -4,13 +4,6 @@ async function mountURL(mountPoint, url) {
   mountPoint.innerHTML = await loadHTML(url);
 }
 
-const url = import.meta.url;
-const hostName = url.split('/').slice(0, 3).join('/');
-
-export function getHostName() {
-  return hostName;
-}
-
 function pathToTemplateId(rPath) {
   const ts = rPath.replaceAll(/[\/\.\:]+/g, '-');
   return ts;
@@ -29,7 +22,7 @@ async function loadHTML(url) {
     try {
       const lt = loadTemplate(url);
       if (lt != null) return lt;
-      const res = await fetch(`${hostName}${url}`);
+      const res = await fetch(url);
       if (res.ok)
         return await res.text();
       throw new Error(`Error loading ${url}`);
