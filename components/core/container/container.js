@@ -1,23 +1,26 @@
 import attributes from '../attributes/attributes.js';
-import dom from '../dom/dom.js';
-import string from '../string/string.js';
+import loader from '../loader/loader.js'
 
 export class Container extends HTMLElement {  
   #template = null;
 
   constructor() {
     super();
-    this.render().then(() => {
-      attributes.loadAttributes(this);      
-    });
+    attributes.loadAttributes(this);
+    this.render();
   }
 
   async render() {
-    const tt = typeof this.template;
-    if (tt == 'string')
-      this.innerHTML = this.template; 
-    else if (this.template instanceof HTMLElement) {
-      this.appendChild(body);
+    if ((this.template == null) && (this.url != null)) {
+      this.template = await loader.loadHTML(this.url);
+    }
+    const tt = typeof this.template;    
+    if (tt == 'string') {
+      if (this.innerHTML == '')
+        this.innerHTML = this.template; 
+    } else if (this.template instanceof HTMLElement) {
+      if (this.innerHTML == '')
+        this.appendChild(body);
     }
   }
 

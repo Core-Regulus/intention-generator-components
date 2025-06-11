@@ -34,12 +34,19 @@ export function isValidName(val) {
   return true;
 }
 
-
-
+function isURL(str) {
+  try {
+    new URL(str);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
 export default {
   toCamelCase,
   capitalize,
   toString,
   toBoolean,
-  isValidName
+  isValidName,
+  isURL
 }
