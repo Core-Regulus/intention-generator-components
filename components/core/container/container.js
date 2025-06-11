@@ -16,7 +16,7 @@ export class Container extends HTMLElement {
       const fUrl = string.isURL(this.url) ? 
         this.url :
         window.location.origin + this.url;
-      this.template = await loader.loadHTML(this.url);
+      this.template = await loader.loadHTML(fUrl);
     }
     const tt = typeof this.template;    
     if (tt == 'string') {
