@@ -14,10 +14,10 @@ export class Container extends HTMLElement {
   async render(force) {
     const forceLoad = (window.location.hostname == 'localhost') || force;
     if (forceLoad && (this.url != null)) {
-      const fUrl = string.isURL(this.url) ? 
+      /*const fUrl = string.isURL(this.url) ? 
         this.url :
-        window.location.origin + this.url;
-      this.template = await loader.loadHTML(fUrl);
+        window.location.origin + this.url;*/
+      this.template = await loader.loadHTML(this.url);
     }
     const tt = typeof this.template;    
     if (tt == 'string') {
