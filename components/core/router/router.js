@@ -69,7 +69,7 @@ export class Router extends Container {
 
   set routes(value) {
     
-    import(value).then(async (routes) => {
+    import(window.origin + value).then(async (routes) => {
       this._routes = routes.routes;
       await this.goto(window.location.pathname + window.location.search, null, false);
     })
