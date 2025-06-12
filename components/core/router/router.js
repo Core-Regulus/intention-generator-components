@@ -1,5 +1,5 @@
 import { Container } from '../container/container.js';
-import loader from '../core/loader/loader.js';
+import loader from '../loader/loader.js';
 
 const ROUTE_CHANGE = "route.change";
 
