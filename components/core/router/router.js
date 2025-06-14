@@ -41,12 +41,13 @@ function setHistory(path, params, push) {
 
 export class Router extends Container {
   _routes = null;
-
-  async #setRoute(path, params, push) {    
+    
+  async #setRoute(path, params, push, force = false) {
     const route = getRoute(this._routes, path);
-    if ((this.currentRoute != null) &&
-        (route == this.currentRoute)) return route;
-    if (route == null) return null;        
+    if (force && (this.currentRoute != null) &&
+       (route == this.currentRoute)) return route;
+
+        if (route == null) return null;        
     const cls = route.name;
     if (cls != null) {
       this.className = cls;
@@ -64,16 +65,13 @@ export class Router extends Container {
     if (this.routes == null) return;    
     this.currentRoute = await this.#setRoute(path, params, push);
   }
-
-  async connectedCallback() {
-    
-  }
-
-  set routes(value) {
-    
+  
+  set routes(value) {    
     import(window.origin + value).then(async (routes) => {
       this._routes = routes.routes;
-      await this.goto(window.location.pathname + window.location.search, null, false);
+      const tPath = window.location.pathname + window.location.search;
+      this.currentRoute = getRoute(this._routes, tPath);
+      await this.goto(tPath, null, false, true);
     })
   }
 
