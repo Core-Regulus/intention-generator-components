@@ -45,7 +45,7 @@ export class Router extends Container {
   async #setRoute(path, params, push) {
     const route = getRoute(this._routes, path);
     if (route == null) return null;        
-    const isSameRoute = (this.currentRoute != null) && (route == this.currentRoute);
+    const isSameRoute = (this.currentRoute != null) && (route.page == this.currentRoute.page);
     const isEmpty = (this.innerHTML == '');
     if (isSameRoute && !isEmpty) return route;
     const cls = route.name;
