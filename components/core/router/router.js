@@ -42,8 +42,10 @@ function setHistory(path, params, push) {
 export class Router extends Container {
   _routes = null;
 
-  async #setRoute(path) {    
+  async #setRoute(path, params, push) {    
     const route = getRoute(this._routes, path);
+    if ((this.currentRoute != null) &&
+        (route == this.currentRoute)) return route;
     if (route == null) return null;        
     const cls = route.name;
     if (cls != null) {
@@ -53,14 +55,14 @@ export class Router extends Container {
     this.innerHTML =  template;
     const event = new CustomEvent(ROUTE_CHANGE, { detail: route });
     window.dispatchEvent(event);
+    if (route != null)
+      setHistory(route.path, params, push);
     return route;
   }
   
   async goto(path, params, push = false) {
     if (this.routes == null) return;    
-    const route = await this.#setRoute(path);
-    if (route != null)
-      setHistory(route.path, params, push);
+    this.currentRoute = await this.#setRoute(path, params, push);
   }
 
   async connectedCallback() {
