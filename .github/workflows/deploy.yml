@@ -19,3 +19,9 @@ jobs:
           key: ${{secrets.SSH}}
           source: "./components/*"
           target: "/home/ci/intentionGenerator"
+      - name: Purge Cache
+        run : |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{secrets.ZONE_ID}}/purge_cache" \
+               -H "Authorization: Bearer {{secrets.PURGE_CACHE_TOKEN}}" \
+               -H "Content-Type: application/json" \
+               --data '{"purge_everything":true}'
