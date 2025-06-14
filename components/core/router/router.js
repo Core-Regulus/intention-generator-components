@@ -42,12 +42,12 @@ function setHistory(path, params, push) {
 export class Router extends Container {
   _routes = null;
     
-  async #setRoute(path, params, push, force = false) {
+  async #setRoute(path, params, push) {
     const route = getRoute(this._routes, path);
-    if (force && (this.currentRoute != null) &&
-       (route == this.currentRoute)) return route;
-
-        if (route == null) return null;        
+    if (route == null) return null;        
+    const isSameRoute = (this.currentRoute != null) && (route == this.currentRoute);
+    const isEmpty = (this.innerHTML == '');
+    if (isSameRoute && !isEmpty) return route;
     const cls = route.name;
     if (cls != null) {
       this.className = cls;
@@ -71,7 +71,7 @@ export class Router extends Container {
       this._routes = routes.routes;
       const tPath = window.location.pathname + window.location.search;
       this.currentRoute = getRoute(this._routes, tPath);
-      await this.goto(tPath, null, false, true);
+      await this.goto(tPath, null, false);
     })
   }
 
