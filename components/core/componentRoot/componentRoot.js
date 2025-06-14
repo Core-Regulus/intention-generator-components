@@ -8,15 +8,8 @@ export class ComponentRoot extends Container {
   async render() {
     await super.render();
     dom.collectComponents(this);
+    this.componentReady?.();
   }
-
-  set name(value) {
-    this.#name = value;
-    if (string.isValidName(this.#name))
-      dom.collectComponents(this);
-  }
-
-  get name() { return this.#name; }
 }
 
 export default {
