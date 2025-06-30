@@ -12,7 +12,7 @@ export class Container extends HTMLElement {
   }
 
   async render(force) {
-    const forceLoad = (window.location.hostname == 'localhost') || force;
+    const forceLoad = (window.location.hostname == 'localhost') || force || this.children.length == 0;
     if (forceLoad && (this.url != null)) {
       /*const fUrl = string.isURL(this.url) ? 
         this.url :
