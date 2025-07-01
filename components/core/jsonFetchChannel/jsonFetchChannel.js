@@ -7,7 +7,7 @@ export class JSONFetchChannel extends FetchChannel {
 
   async send(data) {
     this.headers['Content-Type'] = 'application/json';    
-    const resp = await super.send(data);          
+    const resp = await super.send(JSON.stringify(data));
     const res = await this.#getResponse(resp);
     this.sendMessage(res);
     return res;
