@@ -35,15 +35,15 @@ export class FetchChannel extends Channel {
   }
 
   async send(data) {
-    if (this.#url == null) throw new Error('url is not set');
-    this.#response = await fetch(this.#url, {
-      headers: this.#headers,
-      method: this.#method,
+    if (this.url == null) throw new Error('url is not set');
+    this.#response = await fetch(this.url, {
+      headers: this.headers,
+      method: this.method,
       body: data
     });
     this.#status = this.#response.status;    
     if (!this.#response.ok) {
-      throw new ChannelError(`Response from ${this.#url} error. Status code is ${this.#status}`, this);
+      throw new ChannelError(`Response from ${this.url} error. Status code is ${this.#status}`, this);
     }
     return this.#response;
   }
