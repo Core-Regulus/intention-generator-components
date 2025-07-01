@@ -41,9 +41,9 @@ export class FetchChannel extends Channel {
       method: this.#method,
       body: data
     });
-    this.#status = resp.status;    
-    if (!resp.ok) {
-      throw new ChannelError(`Response from ${this.#url} error. Status code is ${this.#status}`, this);    
+    this.#status = this.#response.status;    
+    if (!this.#response.ok) {
+      throw new ChannelError(`Response from ${this.#url} error. Status code is ${this.#status}`, this);
     }
     return this.#response;
   }
