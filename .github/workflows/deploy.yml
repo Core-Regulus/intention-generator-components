@@ -18,7 +18,7 @@ jobs:
           port: 22
           key: ${{secrets.SSH}}
           source: "./current/*"
-          target: "/home/ci/intentionGenerator/current"
+          target: "/home/ci/intentionGenerator"
       - name: Purge Cache
         run : |
           curl --fail --show-error -X POST "https://api.cloudflare.com/client/v4/zones/${{secrets.ZONE_ID}}/purge_cache" \
