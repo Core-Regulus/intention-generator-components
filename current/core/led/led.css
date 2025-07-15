@@ -1,9 +1,9 @@
-intention-led {
+i-led {
   display: flex;
   gap: 0.5rem;
 }
 
-intention-led .led {
+i-led .led {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
@@ -11,11 +11,10 @@ intention-led .led {
   flex-shrink: 0;
 }
 
-intention-led .led {
+i-led .led {
   background-color: gray;
 }
 
-intention-led.on .led {
+i-led.on .led {
   background-color: green;
 }
-

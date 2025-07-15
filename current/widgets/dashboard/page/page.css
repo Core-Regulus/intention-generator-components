@@ -1,4 +1,4 @@
-intention-dashboard-page {
+i-dashboard-page {
   padding: 1rem;
   margin: 0;
   width: 100%;
@@ -9,11 +9,11 @@ intention-dashboard-page {
   min-height: 100%;
 }
 
-intention-dashboard-page intention-grid-panel {
+i-dashboard-page i-grid-panel {
   height: 100%;
 }
 
-intention-dashboard-page input {
+i-dashboard-page input {
   border-color: #2b72de;
   background-color: #292864;
   color: #fcfdff;
@@ -21,7 +21,7 @@ intention-dashboard-page input {
   width: 100%
 }
 
-intention-dashboard-page intention-flex-panel {
+i-dashboard-page i-flex-panel {
   background-color: #2b2968;
   border-radius: 0.5rem;
 }

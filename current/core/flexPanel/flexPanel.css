@@ -1,9 +1,9 @@
-intention-flex-panel {
-  display: flex; 
+i-flex-panel {
+  display: flex;
   flex-direction: row;
   width: min-content;
 }
 
-intention-flex-panel.vertical {
+i-flex-panel.vertical {
   flex-direction: column;
 }

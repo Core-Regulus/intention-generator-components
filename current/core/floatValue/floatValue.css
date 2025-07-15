@@ -1,28 +1,28 @@
-intention-float-value {
+i-float-value {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-intention-float-value span {
-  width: 80px;  
-  text-align: right; 
+i-float-value span {
+  width: 80px;
+  text-align: right;
 }
 
-intention-float-value input {
+i-float-value input {
   width: 100%;
 }
 
-intention-float-value input:focus {
+i-float-value input:focus {
   outline: none;
 }
 
-intention-float-value input:read-only {
+i-float-value input:read-only {
   outline: none;
   border: none;
   background-color: transparent;
 }
 
-intention-float-value .title {
+i-float-value .title {
   width: 75px;
 }

@@ -1,18 +1,18 @@
-intention-quaternion {
+i-quaternion {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-intention-quaternion span {
+i-quaternion span {
   width: 75px;
 }
 
-intention-quaternion input {
+i-quaternion input {
   width: auto;
 }
 
-intention-quaternion input:read-only {
+i-quaternion input:read-only {
   outline: none;
   border: none;
 }
