@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import '../floatValue/floatValue.js'
-import loader from '../loader/loader.js';
-import { ComponentRoot } from '../componentRoot/componentRoot.js';
+import '../../core/floatValue/floatValue.js'
+import loader from '../../core/loader/loader.js';
+import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 
 loader.loadCSS(import.meta.resolve('./euler.css'));
 
@@ -18,7 +18,7 @@ class Euler extends ComponentRoot {
   _readOnly = false;
 
   constructor() {
-    super();    
+    super();
   }
 
   get roll() { return this.get('components.roll.value'); }

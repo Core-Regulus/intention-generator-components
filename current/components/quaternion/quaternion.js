@@ -1,5 +1,5 @@
-import loader from '../loader/loader.js';
-import { ComponentRoot } from '../componentRoot/componentRoot.js';
+import loader from '../../core/loader/loader.js';
+import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 
 loader.loadCSS(import.meta.resolve('./quaternion.css'));
 

@@ -1,5 +1,5 @@
-import loader from '../loader/loader.js';
-import { Container } from '../container/container.js';
+import loader from '../../core/loader/loader.js';
+import { Container } from '../../core/container/container.js';
 
 loader.loadCSS(import.meta.resolve('./title.css'));
 

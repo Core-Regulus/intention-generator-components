@@ -41,10 +41,10 @@ function setHistory(path, params, push) {
 
 export class Router extends Container {
   _routes = null;
-    
+
   async #setRoute(path, params, push) {
     const route = getRoute(this._routes, path);
-    if (route == null) return null;        
+    if (route == null) return null;
     const isSameRoute = (this.currentRoute != null) && (route.page == this.currentRoute.page);
     const isEmpty = (this.innerHTML == '');
     if (isSameRoute && !isEmpty) return route;
@@ -53,20 +53,20 @@ export class Router extends Container {
       this.className = cls;
     }
     const template = await loader.loadHTML(route.page);
-    this.innerHTML =  template;
+    this.innerHTML = template;
     const event = new CustomEvent(ROUTE_CHANGE, { detail: route });
     window.dispatchEvent(event);
     if (route != null)
       setHistory(route.path, params, push);
     return route;
   }
-  
+
   async goto(path, params, push = false) {
-    if (this.routes == null) return;    
+    if (this.routes == null) return;
     this.currentRoute = await this.#setRoute(path, params, push);
   }
-  
-  set routes(value) {    
+
+  set routes(value) {
     import(window.origin + value).then(async (routes) => {
       this._routes = routes.routes;
       const tPath = window.location.pathname + window.location.search;

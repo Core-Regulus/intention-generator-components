@@ -1,4 +1,4 @@
-import loader from '../loader/loader.js';
+import loader from '../../core/loader/loader.js';
 
 loader.loadCSS(import.meta.resolve('./errorMessage.css'));
 
