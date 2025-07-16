@@ -23,7 +23,7 @@ class Euler extends ComponentRoot {
 
   get roll() { return this.get('components.roll.value'); }
   set roll(value) { this.set('components.roll.value', value); }
-  get pitch() { return this.get('components.pitch.value', value); }
+  get pitch() { return this.get('components.pitch.value'); }
   set pitch(value) { this.set('components.pitch.value', value); }
   get yaw() { return this.get('components.yaw.value'); }
   set yaw(value) { this.set('components.yaw.value', value); }
