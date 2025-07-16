@@ -23,18 +23,18 @@ class Euler extends ComponentRoot {
 
   get readOnly() { return this.#readOnly; }
 
-  get roll() { return this.components.roll.value; }
-  set roll(value) { this.components.roll.value = value }
-  get pitch() { return this.components.pitch.value; }
-  set pitch(value) { this.components.pitch.value = value; }
-  get yaw() { return this.components.yaw.value; }
-  set yaw(value) { this.components.yaw.value = value; }
+  get roll() { return this.get('components.roll.value'); }
+  set roll(value) { this.set('components.roll.value', value); }
+  get pitch() { return this.get('components.pitch.value', value); }
+  set pitch(value) { this.set('components.pitch.value', value); }
+  get yaw() { return this.get('components.yaw.value'); }
+  set yaw(value) { this.set('components.yaw.value', value); }
 
   set readOnly(value) {
     this.#readOnly = value;
-    this.components.roll.readOnly = value;
-    this.components.pitch.readOnly = value;
-    this.components.yaw.readOnly = value;
+    this.set('components.roll.readOnly', value);
+    this.set('components.pitch.readOnly', value);
+    this.set('components.yaw.readOnly', value);
   }
 
   get quaternion() {

@@ -11,26 +11,26 @@ class FloatValue extends ComponentRoot {
     `;
   }
 
-  set value(value) { this.components.value.value = value; }
-  get value() { return this.components.value.value; }
+  set value(value) { this.set('components.value.value', value); }
+  get value() { return this.get('components.value.value'); }
 
-  set step(value) { this.components.value.step = value; }
-  get step() { return this.components.value.step; }
+  set step(value) { this.set('components.value.step', value); }
+  get step() { return this.get('components.value.step'); }
 
-  set min(value) { this.components.value.min = value; }
-  get min() { return this.components.value.min; }
+  set min(value) { this.set('components.value.min', value); }
+  get min() { return this.get('components.value.min'); }
 
-  set max(value) { this.components.value.max = value; }
-  get max() { return this.components.value.max; }
+  set max(value) { this.set('components.value.max', value ); }
+  get max() { return this.get('components.value.max'); }
 
-  set titleWidth(value) { this.components.title.style.width = value; }
-  get titleWidth() { return this.components.title.style.width; }
+  set titleWidth(value) { this.set('components.title.style.width', value); }
+  get titleWidth() { return this.get('components.title.style.width'); }
 
   set readOnly(value) {
-    this.components.value.readOnly = value;
+    this.set('components.value.readOnly', value);
   }
 
-  get readOnly() { this.components.value.readOnly; }
+  get readOnly() { return this.get('this.components.value.readOnly'); }
 }
 
 customElements.define('i-float-value', FloatValue);
