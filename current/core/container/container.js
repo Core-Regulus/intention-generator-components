@@ -4,11 +4,16 @@ import loader from '../loader/loader.js';
 
 export class Container extends HTMLElement {  
   #template = null;
+  #properties = {};
 
   constructor() {
     super();
     attributes.loadAttributes(this);
     this.render();
+  }
+
+  get properties() {
+    return this.#properties;
   }
 
   async render(force) {
@@ -30,6 +35,48 @@ export class Container extends HTMLElement {
 
   set template(value) { this.#template = value; }
   get template() { return this.#template; }
+
+
+  getObject(path) {
+    let root = this;
+    const ka = path.split('.').slice(0, -1);
+    for (const c of ka) {
+      root = root[c];
+      if (root == null) break;
+    }
+    const key = ka[ka.length - 1];
+    return {
+      isValid: (root != null),
+      key,
+      object: root
+    };
+  }
+
+  set(path, value) {
+    const obj = this.getObject(path);
+    if (obj.isValid) {
+      obj.object[obj.key] = value;
+    }
+    this.properties[path] = value;
+  }
+
+  get(path) {
+    const obj = this.getObject(path);
+    if (obj.isValid) {
+      return obj.object[obj.key];
+    }
+    return this.properties[path];
+  }
+
+  apply() {
+    const keys = Object.keys(this.properties);
+    for (const key of keys) {
+      const val = this.properties[key];
+      const obj = this.getObject(key);
+      if (!obj.isValid) continue;
+      obj.object[obj.key] = val;
+    }
+  }
 
   copyChildNodes(dest, source) {
     if (dest == source) return;
