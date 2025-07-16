@@ -9,7 +9,7 @@ export class ComponentRoot extends Container {
 
   constructor() {
     super();
-    _properties = {};
+    this._properties = {};
   }
 
   async render() {
