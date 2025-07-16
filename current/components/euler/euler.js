@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import '../../core/floatValue/floatValue.js'
+import '../floatValue/floatValue.js'
 import loader from '../../core/loader/loader.js';
 import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 
