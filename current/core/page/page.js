@@ -1,4 +1,4 @@
-import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
+import { ComponentRoot } from '../componentRoot/componentRoot.js';
 
 export class Page extends ComponentRoot { }
 
