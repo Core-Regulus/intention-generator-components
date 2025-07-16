@@ -24,10 +24,10 @@ class Quaternion extends ComponentRoot {
   get real() { return Number(this.get('components.real.value')); }
 
   set readOnly(value) {
-    this.get('components.real.readOnly', value);
-    this.get('components.i.readOnly', value);
-    this.get('components.j.readOnly', value);
-    this.get('components.k.readOnly', value);
+    this.set('components.real.readOnly', value);
+    this.set('components.i.readOnly', value);
+    this.set('components.j.readOnly', value);
+    this.set('components.k.readOnly', value);
   }
 
   get readOnly() {
