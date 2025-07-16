@@ -45,7 +45,7 @@ export class Container extends HTMLElement {
       root = root[c];
       if (root == null) break;
     }
-    const key = pathArray[-1];
+    const key = pathArray[pathArray.length -1];
     return {
       isValid: (root != null),
       key,
