@@ -1,5 +1,5 @@
 import loader from '../../../core/loader/loader.js';
-import { Page } from '../../../core/application/application.js';
+import { Application } from '../../../core/application/application.js';
 
 loader.loadCSS(import.meta.resolve('./application.css'));
 
