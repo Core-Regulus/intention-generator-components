@@ -1,7 +1,6 @@
 i-flex-panel {
   display: flex;
-  flex-direction: row;
-  width: min-content;
+  flex-direction: row;  
 }
 
 i-flex-panel.vertical {
