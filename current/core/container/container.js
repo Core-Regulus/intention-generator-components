@@ -1,6 +1,6 @@
 import attributes from '../attributes/attributes.js';
 import loader from '../loader/loader.js';
-import string from '../string/string.js';
+
 
 export class Container extends HTMLElement {  
   #template = null;
@@ -14,9 +14,6 @@ export class Container extends HTMLElement {
   async render(force) {
     const forceLoad = (window.location.hostname == 'localhost') || force || this.children.length == 0;
     if (forceLoad && (this.url != null)) {
-      /*const fUrl = string.isURL(this.url) ? 
-        this.url :
-        window.location.origin + this.url;*/
       this.template = await loader.loadHTML(this.url);
     }
     const tt = typeof this.template;    
