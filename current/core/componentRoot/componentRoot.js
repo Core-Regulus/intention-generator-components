@@ -4,6 +4,10 @@ import { Container } from '../container/container.js';
 export class ComponentRoot extends Container {  
   #properties = {};
 
+  get properties() {
+    return this.#properties;
+  }
+
   async render() {
     await super.render();
     dom.collectComponents(this);
@@ -31,7 +35,7 @@ export class ComponentRoot extends Container {
     if (obj.isValid) {
       obj.object[obj.key] = value;
     }
-    this.#properties[path] = value;
+    this.properties[path] = value;
   }
 
   get(path) {
@@ -39,13 +43,13 @@ export class ComponentRoot extends Container {
     if (obj.isValid) {
       return obj.object[obj.key];
     }
-    return this.#properties[path];
+    return this.properties[path];
   }
 
   apply() {
-    const keys = Object.keys(this.#properties);
+    const keys = Object.keys(this.properties);
     for (const key of keys) {
-      const val = this.#properties[key];
+      const val = this.properties[key];
       const obj = this.getObject(key);
       if (!obj.isValid) continue;
       obj.object[obj.key] = val;
