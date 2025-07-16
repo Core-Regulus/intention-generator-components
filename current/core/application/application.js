@@ -1,4 +1,4 @@
-import { Container } from '../ComponentRoot/componentRoot.js';
+import { Container } from '../componentRoot/componentRoot.js';
 
 export class Application extends Container { }
 
