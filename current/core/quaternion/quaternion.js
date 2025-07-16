@@ -13,25 +13,25 @@ class Quaternion extends ComponentRoot {
     `;
   }
 
-  set i(value) { this.components.i.value = value.toFixed(3); }
-  set j(value) { this.components.j.value = value.toFixed(3); }
-  set k(value) { this.components.k.value = value.toFixed(3); }
-  set real(value) { this.components.real.value = value.toFixed(3); }
+  set i(value) { this.set('components.i.value', value.toFixed(3)); }
+  set j(value) { this.set('components.j.value', value.toFixed(3)); }
+  set k(value) { this.set('components.k.value', value.toFixed(3)); }
+  set real(value) { this.set('components.real.value', value.toFixed(3)); }
 
-  get i() { return Number(this.components.i.value); }
-  get j() { return Number(this.components.j.value); }
-  get k() { return Number(this.components.k.value); }
-  get real() { return Number(this.components.real.value); }
+  get i() { return Number(this.get('components.i.value')); }
+  get j() { return Number(this.get('components.j.value')); }
+  get k() { return Number(this.get('components.k.value')); }
+  get real() { return Number(this.get('components.real.value')); }
 
   set readOnly(value) {
-    this.components.real.readOnly = value;
-    this.components.i.readOnly = value;
-    this.components.j.readOnly = value;
-    this.components.k.readOnly = value;
+    this.get('components.real.readOnly', value);
+    this.get('components.i.readOnly', value);
+    this.get('components.j.readOnly', value);
+    this.get('components.k.readOnly', value);
   }
 
   get readOnly() {
-    return this.components.real.readOnly;
+    return this.get('components.real.readOnly');
   }
 }
 
