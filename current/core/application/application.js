@@ -1,5 +1,5 @@
-import { Container } from '../componentRoot/componentRoot.js';
+import { ComponentRoot } from '../componentRoot/componentRoot.js';
 
-export class Application extends Container { }
+export class Application extends ComponentRoot { }
 
 customElements.define('i-application', Application);
