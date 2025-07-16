@@ -15,13 +15,13 @@ class Euler extends ComponentRoot {
     `;
   }
 
-  #readOnly = false;
+  _readOnly = false;
 
   constructor() {
-    super();
+    super();    
   }
 
-  get readOnly() { return this.#readOnly; }
+  get readOnly() { return this._readOnly; }
 
   get roll() { return this.get('components.roll.value'); }
   set roll(value) { this.set('components.roll.value', value); }
