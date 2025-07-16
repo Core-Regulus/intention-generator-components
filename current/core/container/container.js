@@ -21,10 +21,11 @@ export class Container extends HTMLElement {
     if (forceLoad && (this.url != null)) {
       this.template = await loader.loadHTML(this.url);
     }
-    const tt = typeof this.template;    
+    const template = this.template;
+    const tt = typeof template;
     if (tt == 'string') {
       if (forceLoad)
-        this.innerHTML = this.template; 
+        this.innerHTML = template; 
     } else if (this.template instanceof HTMLElement) {
       if (forceLoad) {
         this.innerHTML = '';
