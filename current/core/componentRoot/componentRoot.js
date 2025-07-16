@@ -2,10 +2,10 @@ import dom from '../dom/dom.js';
 import { Container } from '../container/container.js';
 
 export class ComponentRoot extends Container {  
-  #properties = {};
+  _properties = {};
 
   get properties() {
-    return this.#properties;
+    return this._properties;
   }
 
   async render() {
