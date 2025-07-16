@@ -6,10 +6,10 @@ loader.loadCSS(import.meta.resolve('./quaternion.css'));
 class Quaternion extends ComponentRoot {
   get template() {
     return `
-      <i-float-value class="real" value="0" step="0.01" name="real">Real:</intention-float-value>
-      <i-float-value class="i" value="0" step="0.01" name="i">i:</intention-float-value>
-      <i-float-value class="j" value="0" step="0.01" name="j">j:</intention-float-value>
-      <i-float-value class="k" value="0" step="0.01" name="k">k:</intention-float-value>
+      <i-float-value class="real" value="0" step="0.01" name="real">Real:</i-float-value>
+      <i-float-value class="i" value="0" step="0.01" name="i">i:</i-float-value>
+      <i-float-value class="j" value="0" step="0.01" name="j">j:</i-float-value>
+      <i-float-value class="k" value="0" step="0.01" name="k">k:</i-float-value>
     `;
   }
 

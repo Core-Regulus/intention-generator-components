@@ -9,9 +9,9 @@ loader.loadCSS(import.meta.resolve('./euler.css'));
 class Euler extends ComponentRoot {
   get template() {
     return `
-      <i-float-value class="roll" value="0" name="roll">Roll:</intention-float-value>
-      <i-float-value class="pitch" value="0" name="pitch">Pitch:</intention-float-value>
-      <i-float-value class="yaw" value="0" name="yaw">Yaw:</intention-float-value>    
+      <i-float-value class="roll" value="0" name="roll">Roll:</i-float-value>
+      <i-float-value class="pitch" value="0" name="pitch">Pitch:</i-float-value>
+      <i-float-value class="yaw" value="0" name="yaw">Yaw:</i-float-value>    
     `;
   }
 
