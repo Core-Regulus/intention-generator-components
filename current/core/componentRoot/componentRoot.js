@@ -20,7 +20,7 @@ export class ComponentRoot extends Container {
     }
     const key = ka[ka.length - 1];
     return {
-      isValid: (root == null),
+      isValid: (root != null),
       key,
       object: root
     };
