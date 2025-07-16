@@ -80,14 +80,9 @@ export class Container extends HTMLElement {
 
   copyChildNodes(dest, source) {
     if (dest == source) return;
-    for (const item of source.childNodes) {
-      try {
-        dest.appendChild(item);
-      } catch (e) {
-        debugger;
-        throw e;
-      }
-      
+    for (const item of source.childNodes) {      
+      if (dest == item) return;
+      dest.appendChild(item);            
     }
   }
 }
