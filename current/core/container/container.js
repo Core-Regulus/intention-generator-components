@@ -39,12 +39,13 @@ export class Container extends HTMLElement {
 
   getObject(path) {
     let root = this;
-    const ka = path.split('.').slice(0, -1);
-    for (const c of ka) {
+    const pathArray = path.split('.');
+    const keyArray = pathArray.slice(0, -1);
+    for (const c of keyArray) {
       root = root[c];
       if (root == null) break;
     }
-    const key = ka[ka.length - 1];
+    const key = pathArray[-1];
     return {
       isValid: (root != null),
       key,
