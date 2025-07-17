@@ -13,15 +13,32 @@ class Quaternion extends ComponentRoot {
     `;
   }
 
-  set i(value) { this.set('components.i.value', value.toFixed(3)); }
-  set j(value) { this.set('components.j.value', value.toFixed(3)); }
-  set k(value) { this.set('components.k.value', value.toFixed(3)); }
-  set real(value) { this.set('components.real.value', value.toFixed(3)); }
+  _i = 0;
+  _j = 0;
+  _k = 0;
+  _real = 0;
 
-  get i() { return Number(this.get('components.i.value')); }
-  get j() { return Number(this.get('components.j.value')); }
-  get k() { return Number(this.get('components.k.value')); }
-  get real() { return Number(this.get('components.real.value')); }
+  set i(value) { 
+    this._i = Number(value);
+    this.set('components.i.value', this._i.toFixed(3)); 
+  }
+  set j(value) { 
+    this._j = Number(value);
+    this.set('components.j.value', this._j.toFixed(3)); 
+  }
+  set k(value) { 
+    this._k = Number(value);
+    this.set('components.k.value', this._k.toFixed(3)); 
+  }
+  set real(value) { 
+    this._real = Number(value);
+    this.set('components.real.value', this._real.toFixed(3)); 
+  }
+
+  get i() { return this._i; }
+  get j() { return this._j; }
+  get k() { return this._k; }
+  get real() { return this._real; }
 
   set readOnly(value) {
     this.set('components.real.readOnly', value);

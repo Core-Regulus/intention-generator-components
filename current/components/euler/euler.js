@@ -16,17 +16,31 @@ class Euler extends ComponentRoot {
   }
 
   _readOnly = false;
+  _roll = 0;
+  _pitch = 0;
+  _yaw = 0;
 
   constructor() {
     super();
   }
 
-  get roll() { return this.get('components.roll.value'); }
-  set roll(value) { this.set('components.roll.value', value); }
-  get pitch() { return this.get('components.pitch.value'); }
-  set pitch(value) { this.set('components.pitch.value', value); }
-  get yaw() { return this.get('components.yaw.value'); }
-  set yaw(value) { this.set('components.yaw.value', value); }
+  get roll() { return this._roll; }
+  set roll(value) { 
+    this._roll = Number(value);
+    this.set('components.roll.value', this._roll.toFixed(3)); 
+  }
+
+  get pitch() { return this._pitch; }
+  set pitch(value) { 
+    this._pitch = Number(value);
+    this.set('components.pitch.value', this._pitch.toFixed(3)); 
+  }
+
+  get yaw() { return this._yaw;  }
+  set yaw(value) { 
+    this._yaw = Number(value);
+    this.set('components.yaw.value', this._yaw.toFixed(3)); 
+  }
 
   get readOnly() { return this._readOnly; }
   set readOnly(value) {
