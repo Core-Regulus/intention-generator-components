@@ -56,12 +56,13 @@ export function searchAttribute(element, name) {
     node: element,
     attributeName: name,
     attributeValue: null
-  };
-  do {
-    res.attributeValue = get(res.node, res.attributeName);
-    res.node = res.node.parentNode;
+  };  
+  while (true) {
     if (res.node == null) return res;
-  } while (res.attributeValue == null);
+    res.attributeValue = get(res.node, res.attributeName);
+    if (res.attributeValue != null) return res;
+    res.node = res.node.parentNode;
+  }
   return res;
 }
 
