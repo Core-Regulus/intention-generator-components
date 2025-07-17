@@ -2,7 +2,7 @@ import { isEmpty, toKebab, toCamelCase } from "../string/string.js";
 
 function createComponentHash(domRoot, fullPath) {
   const res = {};
-  const elements = domRoot.querySelector(`[name^=${fullPath}]`);
+  const elements = domRoot.querySelectorAll(`[name^=${fullPath}]`);
   for (const elem of elements) {
     const name = attributes.get(el, 'name');
     const firstPart = toCamelCase(name.split('.')[0]);
