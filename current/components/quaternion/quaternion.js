@@ -1,4 +1,3 @@
-import loader from '../../core/loader/loader.js';
 import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 
 class Quaternion extends ComponentRoot {
