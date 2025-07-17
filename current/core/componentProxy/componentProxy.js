@@ -1,4 +1,5 @@
 import { isEmpty, toKebab, toCamelCase } from "../string/string.js";
+import attributes from "../attributes/attributes.js";
 
 function createComponentHash(domRoot, fullPath) {
   const res = {};
