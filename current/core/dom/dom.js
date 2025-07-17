@@ -31,12 +31,7 @@ export function collectComponents(element) {
       root = root[name];        
     }
     const lname = string.toCamelCase(namesArray[namesArray.length - 1]);
-    try {
-      root[lname] = el;
-    } catch (e) {
-      debugger;
-      throw e;
-    }
+    root[lname] = el;    
   }
 }
 

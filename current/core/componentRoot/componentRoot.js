@@ -1,10 +1,15 @@
-import dom from '../dom/dom.js';
 import { Container } from '../container/container.js';
+import { createComponentProxy } from '../componentProxy/componentProxy.js';
 
 export class ComponentRoot extends Container {  
-  async render() {
+  #components = createComponentProxy({});
+  
+  get components() {
+    return this.#components;
+  }
+
+  async render() { 
     await super.render();
-    dom.collectComponents(this);
     this.apply();
     this.componentReady?.();
   }
