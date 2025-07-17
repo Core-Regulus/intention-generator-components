@@ -1,4 +1,4 @@
-i-dashboard-application {
+i-application {
   padding: 1rem;
   margin: 0;
   width: 100%;
@@ -9,11 +9,11 @@ i-dashboard-application {
   min-height: 100%;
 }
 
-i-dashboard-application i-grid-panel {
+i-application i-grid-panel {
   height: 100%;
 }
 
-i-dashboard-application input {
+i-application input {
   border-color: #2b72de;
   background-color: #292864;
   color: #fcfdff;
@@ -21,7 +21,7 @@ i-dashboard-application input {
   width: 100%
 }
 
-i-dashboard-application i-flex-panel {
+i-application i-flex-panel {
   background-color: #2b2968;
   border-radius: 0.5rem;
 }
