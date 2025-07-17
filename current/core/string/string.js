@@ -40,7 +40,7 @@ export function isValidName(val) {
   return true;
 }
 
-function isURL(str) {
+export function isURL(str) {
   try {
     new URL(str);
     return true;
@@ -49,7 +49,7 @@ function isURL(str) {
   }
 }
 
-function isEmpty(str) {
+export function isEmpty(str) {
   return (str == null) || (str == '');
 }
 
