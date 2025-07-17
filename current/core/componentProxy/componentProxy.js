@@ -1,8 +1,8 @@
 import { isEmpty, toKebab, toCamelCase } from "../string/string.js";
 
-function createComponentHash(fullPath) {
+function createComponentHash(domRoot, fullPath) {
   const res = {};
-  const elements = this.querySelector(`[name^=${fullPath}]`);
+  const elements = domRoot.querySelector(`[name^=${fullPath}]`);
   for (const elem of elements) {
     const name = attributes.get(el, 'name');
     const firstPart = toCamelCase(name.split('.')[0]);
@@ -11,20 +11,20 @@ function createComponentHash(fullPath) {
   return res;
 }
 
-export function createComponentProxy(source, prefix) {
+export function createComponentProxy(domRoot, source, prefix) {
   const componentHandler = {
     get(obj, prop) {
       const fullPath = isEmpty(prefix) ? toKebab(prop) : toKebab(`${prefix}.${prop}`);
       if (obj[fullPath] !== undefined) {
         return obj[fullPath];
       }
-      const targetElement = this.querySelector(`[name=${fullPath}]`);
+      const targetElement = domRoot.querySelector(`[name=${fullPath}]`);
       if (targetElement != null) {
         obj[fullPath] = targetElement;
         return targetElement;
       }
-      const res = createComponentHash(fullPath);
-      return createComponentProxy(res, fullPath);
+      const res = createComponentHash(domRoot, fullPath);
+      return createComponentProxy(domRoot, res, fullPath);
     }
   };
   return new Proxy(source, componentHandler);
