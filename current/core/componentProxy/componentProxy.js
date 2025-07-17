@@ -3,7 +3,7 @@ import attributes from "../attributes/attributes.js";
 
 function createComponentHash(domRoot, fullPath) {
   const res = {};
-  const elements = domRoot.querySelectorAll(`[name^=${fullPath}]`);
+  const elements = domRoot.querySelectorAll(`[name^="${fullPath}]"`);
   for (const elem of elements) {
     const name = attributes.get(elem, 'name');
     const firstPart = toCamelCase(name.split('.')[0]);
@@ -19,7 +19,7 @@ export function createComponentProxy(domRoot, source, prefix) {
       if (obj[fullPath] !== undefined) {
         return obj[fullPath];
       }
-      const targetElement = domRoot.querySelector(`[name=${fullPath}]`);
+      const targetElement = domRoot.querySelector(`[name="${fullPath}"]`);
       if (targetElement != null) {
         obj[fullPath] = targetElement;
         return targetElement;
