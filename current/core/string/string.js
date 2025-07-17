@@ -11,6 +11,12 @@ export function toCamelCase(name, skipParts = {}) {
   return res.join('');
 }
 
+export function toKebab(str) {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .toLowerCase();
+}
+
 export function capitalize(val) {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
@@ -42,11 +48,18 @@ function isURL(str) {
     return false;
   }
 }
+
+function isEmpty(str) {
+  return (str == null) || (str == '');
+}
+
 export default {
   toCamelCase,
   capitalize,
   toString,
   toBoolean,
   isValidName,
-  isURL
+  isURL,
+  isEmpty,
+  toKebab
 }
