@@ -12,8 +12,7 @@ function createComponentHash(fullPath) {
 }
 
 export function createComponentProxy(source, prefix) {
-  const prefix = prefix;
-    const componentHandler = {
+  const componentHandler = {
     get(obj, prop) {
       const fullPath = isEmpty(prefix) ? toKebab(prop) : toKebab(`${prefix}.${prop}`);
       if (obj[fullPath] !== undefined) {
