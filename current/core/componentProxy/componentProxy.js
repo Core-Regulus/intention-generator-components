@@ -4,6 +4,7 @@ import attributes from "../attributes/attributes.js";
 function createComponentHash(domRoot, fullPath) {
   const res = {};
   const elements = domRoot.querySelectorAll(`[name^="${fullPath}]"`);
+  if (elements.length == 0) return undefined;
   for (const elem of elements) {
     const name = attributes.get(elem, 'name');
     const firstPart = toCamelCase(name.split('.')[0]);
@@ -25,6 +26,7 @@ export function createComponentProxy(domRoot, source, prefix) {
         return targetElement;
       }
       const res = createComponentHash(domRoot, fullPath);
+      if (res == null) return res;
       return createComponentProxy(domRoot, res, fullPath);
     }
   };
