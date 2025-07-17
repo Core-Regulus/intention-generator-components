@@ -3,8 +3,7 @@ import { Container } from '../../core/container/container.js';
 export class FlexPanel extends Container {
   constructor() {
     super();
-    this.style['display'] = 'flex';
-    this.direction = 'row';
+    this.style['display'] = 'flex';    
   }
 
   set direction(value) {
