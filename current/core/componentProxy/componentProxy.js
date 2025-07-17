@@ -3,7 +3,7 @@ import attributes from "../attributes/attributes.js";
 
 function createComponentHash(domRoot, fullPath) {
   const res = {};
-  const elements = domRoot.querySelectorAll(`[name^="${fullPath}]"`);
+  const elements = domRoot.querySelectorAll(`[name^="${fullPath}"]`);
   if (elements.length == 0) return undefined;
   for (const elem of elements) {
     const name = attributes.get(elem, 'name');
