@@ -53,13 +53,13 @@ export function get(htmlElement, name) {
 
 export function searchAttribute(element, name) {  
   const res = {
-    node: null,
+    node: element,
     attributeName: name,
     attributeValue: null
   };
   do {
-    res.attributeValue = attributes.get(node, name);
-    res.node = node.parentNode;
+    res.attributeValue = get(node, name);
+    res.node = res.node.parentNode;
     if (res.node == null) return res;
   } while (res.attributeValue == null);
   return res;
