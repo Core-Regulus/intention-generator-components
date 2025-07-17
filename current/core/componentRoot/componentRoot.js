@@ -2,10 +2,10 @@ import { Container } from '../container/container.js';
 import { createComponentProxy } from '../componentProxy/componentProxy.js';
 
 export class ComponentRoot extends Container {  
-  #components = createComponentProxy({});
+  _components = createComponentProxy({});
   
   get components() {
-    return this.#components;
+    return this._components;
   }
 
   async render() { 
