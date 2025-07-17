@@ -47,13 +47,27 @@ export function loadAttributes(htmlElement) {
 export function get(htmlElement, name) {
   const ta = htmlElement.getAttribute(name);
   if (ta != null) return ta;
-  const td = htmlElement.getAttribute(`data-name`);
+  const td = htmlElement.getAttribute(`data-${name}`);
   return td;
 }
 
+export function searchAttribute(element, name) {  
+  const res = {
+    node: null,
+    attributeName: name,
+    attributeValue: null
+  };
+  do {
+    res.attributeValue = attributes.get(node, name);
+    res.node = node.parentNode;
+    if (res.node == null) return res;
+  } while (res.attributeValue == null);
+  return res;
+}
 
 export default {
   getBoolean,
+  searchAttribute,
   getString,
   loadAttributes,
   get

@@ -40,6 +40,7 @@ export function collectComponents(element) {
   }
 }
 
-export default {
+
+export default {  
   collectComponents
 }

@@ -1,28 +1,34 @@
 import { ComponentRoot } from '../componentRoot/componentRoot.js';
 import { Actions } from '../actions/actions.js';
+import { searchAttribute } from '../attributes/attributes.js';
 
 export class Application extends ComponentRoot { 
   #actions = new Actions(this);
 
-  constructor() {
-    super();    
-    this.#collectActionClick();
+  #handleClickAction(event) {
+    const target = event.target;
+    const clickA = searchAttribute(target, 'action-click');    
+    this.#actions.dispatch(clickA.node, clickA.attributeValue);
   }
 
-  handleClickAction(element) {
-    const clickA = element.getAttribute('action-click');
-    this.#actions.dispatch(element, clickA);
+  #connectActions() {
+    this.addEventListener('click', this.#handleClickAction);
   }
 
-  #collectActionClick() {        
-    const elements = this.querySelectorAll('[action-click]');
-    const self = this;
-    for (const el of elements) {
-      el.addEventListener('click', function () {
-        self.handleClickAction(this);
-      });
-    }      
+  #disconnectActions() {
+    this.removeEventListener('click', this.#handleClickAction);
   }
+
+
+  connectedCallback() {
+    this.#connectActions();
+  }
+
+  disconnectedCallback() {
+    this.#disconnectActions();
+  }
+
+  
 }
 
 customElements.define('i-application', Application);

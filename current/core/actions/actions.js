@@ -6,6 +6,7 @@ export class Actions {
   }
 
   async dispatch(element, action) {
+    if (element == null) return;
     if (action == null) return;    
     if (this.#application == null) return;
     return await this.#application[action]?.(element);
