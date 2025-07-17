@@ -1,8 +1,6 @@
 import loader from '../../core/loader/loader.js';
 import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 
-loader.loadCSS(import.meta.resolve('./quaternion.css'));
-
 class Quaternion extends ComponentRoot {
   get template() {
     return `

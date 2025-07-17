@@ -1,10 +1,6 @@
 import * as THREE from 'three';
 import '../floatValue/floatValue.js'
-import loader from '../../core/loader/loader.js';
 import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
-
-loader.loadCSS(import.meta.resolve('./euler.css'));
-
 
 class Euler extends ComponentRoot {
   get template() {
