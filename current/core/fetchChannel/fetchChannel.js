@@ -6,10 +6,12 @@ export class FetchChannel extends Channel {
   #method = 'POST';
   #status = null;
   #response = null;
+  #signal = null
 
   get url() {
     return this.#url;
   }
+
   set url(value) {
     this.#url = value;
   }
@@ -30,15 +32,24 @@ export class FetchChannel extends Channel {
     this.#method = value;
   }
 
+  set signal(value) {
+    this.#signal = value;
+  }
+
+  get signal() {
+    return this.#signal;
+  }
+
   get response() {
     return this.#response;
   }
 
   async send(data) {
-    if (this.url == null) throw new Error('url is not set');
+    if (this.url == null) throw new Error('url is not set');    
     this.#response = await fetch(this.url, {
       headers: this.headers,
       method: this.method,
+      signal: this.signal,
       body: data
     });
     this.#status = this.#response.status;    
