@@ -61,6 +61,7 @@ export function searchAttribute(element, name) {
     if (res.node == null) return res;
     res.attributeValue = get(res.node, res.attributeName);
     if (res.attributeValue != null) return res;
+    if (res.node.isSearchRoot) return res;
     res.node = res.node.parentNode;    
   } while (res.node != null)
   return res;

@@ -12,6 +12,10 @@ export class Container extends HTMLElement {
     this.render();
   }
 
+  get isSearchRoot() {
+    return false;
+  }
+
   get properties() {
     return this.#properties;
   }

@@ -5,6 +5,10 @@ import { searchAttribute } from '../attributes/attributes.js';
 export class Application extends ComponentRoot { 
   #actions = new Actions(this);
 
+  get isSearchRoot() {
+    return true;
+  }
+
   #handleClickAction(event) {
     const target = event.target;
     const clickA = searchAttribute(target, 'action-click');    
