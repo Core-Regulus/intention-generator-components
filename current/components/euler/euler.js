@@ -46,6 +46,16 @@ class Euler extends ComponentRoot {
     this.set('components.yaw.readOnly', value);
   }
 
+  set step(value) {
+    this.set('components.roll.step', value);
+    this.set('components.pitch.step', value);
+    this.set('components.yaw.step', value);
+  }
+
+  get step() {
+    return this.components.roll.step;
+  }
+
   get quaternion() {
     const quaternion = new THREE.Quaternion();
     const euler = new THREE.Euler(this.roll, this.pitch, this.yaw, 'XYZ');
