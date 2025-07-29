@@ -25,9 +25,10 @@ export function createComponentProxy(domRoot, source, prefix) {
         obj[fullPath] = targetElement;
         return targetElement;
       }
-      const res = createComponentHash(domRoot, fullPath);
+      const res = createComponentHash(domRoot, fullPath);      
       if (res == null) return res;
-      return createComponentProxy(domRoot, res, fullPath);
+      obj[fullPath] = createComponentProxy(domRoot, res, fullPath);;
+      return obj[fullPath];
     }
   };
   return new Proxy(source, componentHandler);
