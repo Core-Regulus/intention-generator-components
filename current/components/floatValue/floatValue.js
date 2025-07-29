@@ -7,7 +7,7 @@ class FloatValue extends ComponentRoot {
   get template() {
     return `    
       <span class="title" name="title">${this.innerHTML}</span>
-      <input class="value" name="value" type="number" value="0" step="0.01"/>
+      <input class="value" name="value" type="number"/>
     `;
   }
 
