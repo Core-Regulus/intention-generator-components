@@ -4,9 +4,9 @@ import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 class Vector3d extends ComponentRoot {
   get template() {
     return `
-      <i-float-value class="x" value="0" name="x">X:</i-float-value>
-      <i-float-value class="y" value="0" name="y">Y:</i-float-value>
-      <i-float-value class="z" value="0" name="z">X:</i-float-value>    
+      <i-float-value class="x" value="0" name="x">x:</i-float-value>
+      <i-float-value class="y" value="0" name="y">y:</i-float-value>
+      <i-float-value class="z" value="0" name="z">z:</i-float-value>    
     `;
   }
 
