@@ -1,57 +1,71 @@
-class Vector extends HTMLElement {
-  #vector = { x: 0, y: 0, z: 0 };
+import '../floatValue/floatValue.js'
+import { ComponentRoot } from '../../core/componentRoot/componentRoot.js';
 
-  #template =
-    `<label>
-          <span>X:</span>
-          <input class="x" type="number" value="0" name="x"/>
-        </label>
-        <label>
-          <span>Y:</span>
-          <input class="y" type="number" value="0" name="y"/>
-        </label>
-        <label>
-          <span>Z:</span>
-          <input class="z" type="number" value="0" name="z"/>
-        </label>  
-      `;
+class Vector3d extends ComponentRoot {
+  get template() {
+    return `
+      <i-float-value class="x" value="0" name="x">X:</i-float-value>
+      <i-float-value class="y" value="0" name="y">Y:</i-float-value>
+      <i-float-value class="z" value="0" name="z">X:</i-float-value>    
+    `;
+  }
+
+  _readOnly = false;
+  _x = 0;
+  _y = 0;
+  _z = 0;
 
   constructor() {
     super();
   }
 
-  #handleInput = (event) => {
-    const target = event.target;
-    const name = (target.name == 'x') ? 'x' :
-      (target.name == 'y') ? 'y' :
-        (target.name == 'z') ? 'z' :
-          null
-    if (name == null) return;
-    this.#vector[name] = target.value;
+  get x() { return this._x; }
+  set x(value) { 
+    this._x = Number(value);
+    this.set('components.x.value', this._x.toFixed(3)); 
   }
 
-  #enableInputs() {
-    this.components.roll.oninput = this.#handleInput;
-    this.components.pitch.oninput = this.#handleInput;
-    this.components.yaw.oninput = this.#handleInput;
+  get y() { return this._pitch; }
+  set y(value) { 
+    this._y = Number(value);
+    this.set('components.y.value', this._y.toFixed(3)); 
   }
 
-  get vector() {
-    return this.#vector;
+  get z() { return this._z;  }
+  set z(value) { 
+    this._z = Number(value);
+    this.set('components.z.value', this._z.toFixed(3)); 
   }
 
-  async connectedCallback() {
-    this.innerHTML = this.#template;
-    this.components = {
-      roll: this.querySelector('.x'),
-      pitch: this.querySelector('.y'),
-      yaw: this.querySelector('.z'),
+  get readOnly() { return this._readOnly; }
+  set readOnly(value) {
+    this._readOnly = value;
+    this.set('components.x.readOnly', value);
+    this.set('components.y.readOnly', value);
+    this.set('components.z.readOnly', value);
+  }
+
+  set step(value) {
+    this.set('components.roll.step', value);
+    this.set('components.pitch.step', value);
+    this.set('components.yaw.step', value);
+  }
+
+  get step() {
+    return this.components.x.step;
+  }
+
+  componentReady() {
+    this.components.x.oninput = (e) => {
+      this._x = e.target.value;
     };
-
-    this.#enableInputs();
+    this.components.y.oninput = (e) => {
+      this._y = e.target.value;
+    };
+    this.components.z.oninput = (e) => {
+      this._z = e.target.value;
+    }
   }
-
-  async disconnectedCallback() { }
 }
 
-customElements.define('i-vector', Vector);
+customElements.define('i-vector3d', Vector3d);
